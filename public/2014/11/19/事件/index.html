@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>事件 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="article" property="og:type">
+<meta content="事件" property="og:title">
+<meta content="http://yoursite.com/2014/11/19/事件/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta content="1.事件
+ a. 触摸事件(单点触摸,多点触摸及各种手势)
+ b. 晃动事件(重力,加速度等传感器)
+ c. 远程控制事件(线控耳机,airplay等)
+2.事件分发
+ 触摸—&gt;硬件中断—&gt;UIKit封装成UIEvent对象 (针对触摸事件)—&gt;当前运行的应用程序的事件队列—&gt;UIApplication对象—&gt;key window—&gt;Hit -TestingVi" property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/19/事件/" class="article-date">
+  <time datetime="2014-11-19T02:29:24.000Z" itemprop="datePublished">Nov 19 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      事件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.事件</p>
+<pre><code> <span class="operator">a</span>. 触摸事件(单点触摸,多点触摸及各种手势)
+ b. 晃动事件(重力,加速度等传感器)
+ c. 远程控制事件(线控耳机,airplay等)
+</code></pre><p>2.事件分发</p>
+<pre><code> 触摸—&gt;硬件中断—&gt;UIKit封装成UIEvent对象 (针对触摸事件)—&gt;当前运行的应用程序的事件队列—&gt;UIApplication对象—&gt;key window—&gt;Hit -TestingView或<span class="keyword">First</span> Responder
+</code></pre><p>3.事件响应</p>
+<pre><code> hitTest:withEvent:方法将会忽略隐藏(hidden = <span class="literal">YES</span>)的视图,禁止用户操作(userInteractionEnabled = <span class="literal">NO</span>)的视图,以及alpha级别小于<span class="number">0.01</span>(alpha&lt;<span class="number">0.01</span>)的视图
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/19/事件/" data-id="sbpcbz1aux0kae6f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/11/19/代码块/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

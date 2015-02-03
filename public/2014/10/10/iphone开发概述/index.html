@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iphone开发概述 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="article" property="og:type">
+<meta content="iphone开发概述" property="og:title">
+<meta content="http://yoursite.com/2014/10/10/iphone开发概述/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta content="1.发iOS应用程序特点
+只有一个应用程序正在运行;
+只有一个窗口(Window);
+受限访问：沙盒机制严格限制了应用程序的访问权限；较小网络端口；root权限；
+有限的响应时间;
+有限的屏幕大小;
+有限的系统资源：内存空间 &gt;=20MB告警 &gt;=30MB关闭应用程序；存储空间&lt;=2GB；
+不支持GC;
+2.沙盒机制（sandbox)
+iOS中的沙盒机制（SandBox）是一种安" property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-iphone开发概述" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/10/iphone开发概述/" class="article-date">
+  <time datetime="2014-10-10T12:02:41.000Z" itemprop="datePublished">Oct 10 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iphone开发概述
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.发iOS应用程序特点</p>
+<pre><code><span class="attribute">只有一个应用程序正在运行;
+只有一个窗口(Window);
+受限访问：沙盒机制严格限制了应用程序的访问权限；较小网络端口；root权限；
+有限的响应时间;
+有限的屏幕大小;
+有限的系统资源：内存空间 &gt;</span>=<span class="string">20MB告警 &gt;=30MB关闭应用程序；存储空间&lt;=2GB；
+不支持GC;</span>
+</code></pre><p>2.沙盒机制（sandbox)</p>
+<pre><code>iOS中的沙盒机制（SandBox）是一种安全体系，它规定了应用程序只能在为该应用创建的文件夹内读取文件，不可以访问其他地方的内容。所有的非代码文件都保存在这个地方，比如图片、声音、属性列表和文本文件等。
+每个应用程序都在自己的沙盒内
+不能随意跨越自己的沙盒去访问别的应用程序沙盒的内容
+应用程序向外请求或接收数据都需要经过权限认证
+</code></pre><p>3.什么是应用程序的生命周期</p>
+<pre><code>应用程序生命周期指的是应用程序从启动到应用程序结束整个阶段的全部过程。
+每一个iOS应用程序都包含一个<span class="built_in">UIApplication</span>对象，iOS系统通过该对象监控程序生命周期的全过程
+每一个iOS应用程序都要为其<span class="built_in">UIApplication</span>对象设置一个代理对象，并由该代理对象处理    <span class="built_in">UIApplication</span>对象监测到的应用程序生命周期的事件
+</code></pre><p>4.应用程序的五种状态</p>
+<pre><code><span class="number">1</span>.<span class="keyword">Not</span> running（未运行 ）：程序没启动
+<span class="number">2</span>.Inactive （未激活）：程序在前台运行，不过没有接收到事件。在没有事件处理情况下程序通常停留在这个状态
+<span class="number">3</span>.Active（激活）： 程序在前台运行而且接收到了事件。这也是前台的一个正常的模式
+<span class="number">4</span>.Backgroud（后台）：程序在后台而且能执行代码，大多数程序进入这个状态后会在在这个状态上停留一会。时间到之后会进入挂起状态(Suspended)。有的程序经过特殊的请求后可以长期处于Backgroud状态
+<span class="number">5</span>.Suspended（挂起）：程序在后台不能执行代码。系统会自动把程序变成这个状态而且不会发出通知。当挂起时，程序还是停留在内存中的，当系统内存低时，系统就把挂起的程序清除掉，为前台程序提供更多的内存。
+
+
+UIApplicationMain函数有四个参数，你不需要改变这些参数值，不过我们也需要理解这些参数和程序是如何开始：argc 和argv参数。  第三个参数确定了主要应用程序类的名称，这个参数指定为<span class="keyword">nil</span>，这样UIKit就会使用默认UIApplication类创建对象。第四个参数是程序自定义的代理类名，这个类负责系统和代码之间的交互。它一般在Xcode新建项目时会自动生成。
+另外 UIApplicationMain函数加载了程序主界面的文件。虽然这个函数加载了界面文件，但是没有放到应用程序的windows上。
+
+重点理解，UIApplicationMain做的三件事：<span class="number">1</span>、根据第三个参数创建UIApplication对象 <span class="number">2</span>、根据第四个参数创建应用程序的<span class="keyword">delegate</span>，并设置<span class="keyword">delegate</span> <span class="number">3</span>、设置主事件循环(main <span class="keyword">event</span> <span class="keyword">loop</span>)包括application的run <span class="keyword">loop</span>,同时开始处理事件。
+</code></pre><p>5.响应中断</p>
+<pre><code>当一个基于警告式的中断发生时：比如有电话进来、或者锁屏，这时程序临时进入inactive状态，用户可以选择如何处理这个中断
+
+
+当有这些中断时，我们的app该怎么办呢？我们应该在applicationWillResignActive:方法中：
+
+<span class="number">1.</span>停止<span class="built_in">timer</span> 和其他周期性的任务
+<span class="number">2.</span>停止任何正在运行的请求
+<span class="number">3</span>，暂停视频的播放
+<span class="number">4.</span>如果是游戏那就暂停它
+<span class="number">5.</span>减少OpenGL ES的帧率
+<span class="number">6.</span>挂起任何分发的队列和不重要的操作队列（你可���继续处理网络请求或其他时间敏感的后台任务）。
+
+当程序回到active状态 ，applicationDidBecomeActive:   方法应该上面提到的任务重新开始，比如重新开始<span class="built_in">timer</span>, 继续分发队列，提高OpenGL ES的帧率。不过游戏要回到暂停状态，不能自动开始。
+</code></pre><p>6.当应用程序进入后台时，我们应该做些什么？</p>
+<pre><code><span class="number">1</span>.保存用户数据或状态信息，
+<span class="number">2</span>.所有没写到磁盘的文件或信息，在进入后台时，最后都写到磁盘去，因为程序可能在后台被杀死，
+<span class="number">3</span>.释放尽可能释放的内存
+
+application<span class="variable">DidEnterBackgound</span>: 方法有大概<span class="number">5</span>秒的时间让你完成这些任务。如果超过时间还有未完成的任务，你的程序就会被终止而且从内存中清除。如果还需要长时间的运行任务，可以调用  <span class="keyword">begin</span><span class="variable">BackgroundTaskWithExpirationHandler</span> 方法去请求后台运行时间和启动线程来运行长时间运行的任务。
+</code></pre><p>7.应用程序返回前台</p>
+<pre><code>当app处于挂起状态时，它是不能执行任何代码的。因此它不能处理在挂起期间发过来的通知，比如方向改变，时间改变，设置的改变还有其他影响程序展现的或状态的通知。在程序返回后台或前台是，程序都要正确的处理这些通知。
+</code></pre><p>8.程序的终止</p>
+<pre><code>程序只要符合以下情况之一，只要进入后台或挂起状态就会终止：
+<span class="filename">iOS4.0以前的系统
+app是基于iOS4.0之前系统开发的。
+设备不支持多任务
+在Info.plist文件中，程序包含了 UIApplicationExitsOnSuspend  键。
+app如果终止了  ,系统会调用app的代理的方法 applicationWillTerminate</span>:   这样可以让你可以做一些清理工作。你可以保存一些数据或app的状态。这个方法也有<span class="number">5</span>秒钟的限制。超时后方法会返回程序从内存中清除。
+注意：用户可以手工关闭应用程序。
+</code></pre><p>9.The Main Run Loop  主运行循环</p>
+<pre><code>Main Run <span class="keyword">Loop</span>负责处理用户相关的事件。UIApplication对象在程序启动时启动main run <span class="keyword">Loop</span>，它处理事件和更新视图的界面。看Main Run <span class="keyword">Loop</span>就知道，它是运行在程序的主线程上的。这样保证了接收到用户相关操作的事件是按顺序处理的。
+
+用户操作设备，相关的操作事件被系统生成并通过UIKit的指定端口分发。事件在内部排成队列，一个个的分发到Main run <span class="keyword">loop</span> 去做处理。UIApplication对象是第一个接收到时间的对象，它决定事件如何被处理。触摸事件分发到主窗口，窗口再分发到对应出发触摸事件的View。其他的事件通过其他途径分发给其他对象变量做处理。
+
+大部分的事件可以在你的应用里分发，类似于触摸事件，远程操控事件（线控耳机等）都是由app的 responder objects 对象处理的。Responder objects 在你的app里到处都是，比如：UIApplication 对象。view对象，view controller 对象，都是resopnder objects。大部分事件的目标都指定了resopnder <span class="built_in">object</span>，不过事件也可以传递给其他对象。比如，如果view对象不处理事件，可以传给父类view或者view controller。
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/10/iphone开发概述/" data-id="urdxv0ntqluq49kw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/20/谓词的使用1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          谓词的使用1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/07/字符串操作/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">字符串操作</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

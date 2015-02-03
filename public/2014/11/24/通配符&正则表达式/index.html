@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>通配符&amp;正则表达式 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="article" property="og:type">
+<meta content="通配符&正则表达式" property="og:title">
+<meta content="http://yoursite.com/2014/11/24/通配符&正则表达式/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta content="通配符
+ 通配符是系统级别的 ⽽而正则表达式需要相关⼯工具和语⾔言的⽀支持: egrep, awk, vi,perl.
+
+ 当您键入ls.txt命令并按Enter后,寻找哪些文件同.txt模式相匹配的任务不是由ls命令,而是由shell自己完成.这需要对命令行是如何被shell解析的作进一步解释.当您键入:
+ ___________________________
+ $ ls *.txt
+ re" property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-通配符&amp;正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/24/通配符&正则表达式/" class="article-date">
+  <time datetime="2014-11-24T02:28:04.000Z" itemprop="datePublished">Nov 24 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      通配符&amp;正则表达式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>通配符</p>
+<pre><code> 通配符是系统级别的 ⽽而正则表达式需要相关⼯工具和语⾔言的⽀支持: egrep, awk, vi,perl.
+
+ 当您键入ls.txt命令并按Enter后,寻找哪些文件同.txt模式相匹配的任务不是由ls命令,而是由shell自己完成.这需要对命令行是如何被shell解析的作进一步解释.当您键入:
+ <span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span>__
+ $ ls *.txt
+ readme.txt   recipes.txt
+ <span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span>__    
+ 该命令首先被分割成一系列单词(本例中的ls和.txt).当shell在某个单词中发现了,他会将整个单词当作通配模式解析,并用所有相匹配的文件替换它.因此,该命令在执行前就变成为ls readme.txt recipe.txt,而这将得到期望的结果.
+</code></pre></li>
+<li><p>通配符语法</p>
+<pre><code> 通配符语法<span class="symbol">:</span> 星号 将与零个或多个字符匹配.意思是<span class="symbol">:<span class="string">"什么都可以"</span></span>.
+ 例如<span class="symbol">:/etc/g*</span>  与/etc中以g开头的所有文件匹配.
+
+ 通配符语法<span class="symbol">:</span>? 与任何单个字符匹配.
+ 例如<span class="symbol">:myfile?</span> 与文件名 myfile后跟单个字符的任何文件匹配.
+ /tmp/notes?txt 将与 /tmp/notes.txt 和 /tmp/notes_txt 都匹配.
+
+ 通配符语法<span class="symbol">:[]</span> [!]  该通配符与?相似,但允许指定得更确切.要使用该通配符,把您想要匹配的所有字符放在[]内.结果的表达式将与[]中任一字符相匹配.您也可以用 - 来指定范围,甚至还可以组合范围.
+</code></pre></li>
+</ol>
+<pre><code>    [<span class="keyword">...</span>]:同方括号中的任意一个字符相匹配.这些字符可以用字符范围(比如<span class="number">1</span>-<span class="number">9</span>)或者离散值同时使用两者表示.例如:[a-zBE5-<span class="number">7</span>]同所有a到z之间的字符和B,E,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>相匹配.
+    [!<span class="keyword">...</span>]:与所有不在方括号中的某个字符相匹配.例如:[!a-z]同某个非小写字母相匹配[<span class="number">5</span>];
+
+    例子:myfile[<span class="number">12</span>]将与myfile1和myfile2匹配.    只要当前目录中至少有一个这样的文件存在,该通配符就可以进行扩展.    
+    ls /etc/[<span class="number">0</span>-<span class="number">9</span>]*将列出 /etc中以数字开头的所有文件. 
+</code></pre><ol>
+<li><p>正则表达式</p>
+<ul>
+<li><p>选择</p>
+<pre><code>  <span class="string">|竖直分隔符代表选择.例如"</span>gray<span class="string">|grey"</span>可以匹配gray或grey
+</code></pre></li>
+<li><p>数量限定</p>
+<pre><code>  +加号代表前面的字符必须至少出现一次.(<span class="number">0</span>次,或<span class="number">1</span>次).例如:<span class="string">"goo+gle"</span>可以匹配google,gooogle,goooogle等.
+  ?问号代表前面的字符最多只可以出现一次.(<span class="number">0</span>次,或<span class="number">1</span>次).例如:<span class="string">"colou?r"</span>可以匹配<span class="keyword">color</span>或者colour
+  *星号代表前面的字符可以不出现,也可以出现一次或多次(<span class="number">0</span>次,<span class="number">1</span>次或多次),例如:<span class="string">"0*42"</span>可以匹配<span class="number">42</span>,<span class="number">042</span>,<span class="number">0042</span>,<span class="number">00042</span>等.
+</code></pre></li>
+<li><p>匹配</p>
+<pre><code>  圆括号可以用来定义操作符的范围和优先度.例如:<span class="string">"gr(a|e)y"</span>等价于<span class="string">"gray|grey"</span>,<span class="string">"(grand)?father"</span>匹配father和grandfather
+</code></pre><p>上述这些构造都可以自由组合,因此,”H(ae?|b)ndel”和”H(a|ae|b)ndel”是相同的.    </p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/24/通配符&正则表达式/" data-id="mlkxemogtti3g77y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/11/27/xml解析学习网址/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          XML解析学习网址
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/21/uiscrollview基本用法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">UIScrollView基本用法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git 使用详解 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="article" property="og:type">
+<meta content="git 使用详解" property="og:title">
+<meta content="http://yoursite.com/2014/10/23/git-使用详解/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta content="git是什么？
+ Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。
+
+git功能
+ 从一般开发者的角度来看，git有以下功能：
+ 1.从服务器上克隆数据库（包括代码和版本信息）到单机上。
+ 2.在自己的机器上创建分支，修改代码。
+ 3.在单机上自己创建的" property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git-使用详解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/23/git-使用详解/" class="article-date">
+  <time datetime="2014-10-23T13:05:49.000Z" itemprop="datePublished">Oct 23 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git 使用详解
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>git是什么？</p>
+<pre><code> Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。
+</code></pre></li>
+<li><p>git功能</p>
+<pre><code> 从一般开发者的角度来看，git有以下功能：
+ <span class="number">1.</span>从服务器上克隆数据库（包括代码和版本信息）到单机上。
+ <span class="number">2.</span>在自己的机器上创建分支，修改代码。
+ <span class="number">3.</span>在单机上自己创建的分支上提交代码。
+ <span class="number">4.</span>在单机上合并分支。
+ <span class="number">5.</span>新建一个分支，把服务器上最新版的代码fetch下来，然后跟自己的主分支合并。
+ <span class="number">6.</span>生成补丁（<span class="keyword">patch</span>），把补丁发送给主开发者。
+ <span class="number">7.</span>看主开发者的反馈，如果主开发者发现两个一般开发者之间有冲突（他们之间可以合作解决的冲突），就会要求他们先解决冲突，然后再由其中一个人提交。如果主开发者可以自己解决，或者没有冲突，就通过。
+ <span class="number">8.</span>一般开发者之间解决冲突的方法，开发者之间可以使用pull 命令解决冲突，解决完冲突之后再向主开发者提交补丁。
+</code></pre></li>
+<li><p>git的三种状态</p>
+<pre><code> <span class="function">staged(已暂存)</span>：表示把已经修改的文件放入下次提交时要保存的清单中。
+ <span class="function">modified(已修改)</span>：表示修改了整个文件，但是还没有提交保存。
+ <span class="function">committed(已提交)</span>：表示该文件已经安全地保存在本地数据库中了。
+</code></pre></li>
+<li><p>git的常用操作命令</p>
+<pre><code> <span class="number">1.</span>初始化仓库
+     git init
+     git init <span class="comment">--bare 建立的是裸仓库</span>
+ <span class="number">2.</span>配置用户信息
+     git config <span class="comment">--global user.name "username"</span>
+     git config <span class="comment">--global user.email tom@qq.com</span>
+ <span class="number">3.</span>查看配置信息
+     git config <span class="comment">--list</span>
+ <span class="number">4.</span>添加文件到暂存区
+     git <span class="built_in">add</span> filename
+     git <span class="built_in">add</span> *(添加所有文件到暂存区)或者git <span class="built_in">add</span> <span class="comment">--all</span>
+ <span class="number">5.</span>移除文件
+     git rm filename
+ <span class="number">6.</span>重命名一个文件
+     git mv oldfilename newfilename
+ <span class="number">7.</span>提交到暂存区
+     git commit -m <span class="string">"message"</span> 只会提交暂存区（staged）里面的内容
+ <span class="number">8.</span>查看工作目录的状态
+     git status
+ <span class="number">9.</span>查看提交的历史记录
+     git <span class="built_in">log</span>
+ <span class="number">10.</span>查看文件的改变
+     git diff filename 跟工作区进行比较
+     git diff <span class="comment">--cached filename 跟暂存区比较</span>
+ <span class="number">11.</span>撤销加入暂存区的操作
+     git reset <span class="comment">--filename </span>
+ <span class="number">12.</span>撤销修改的操作
+     git checkout <span class="comment">--file</span>
+ <span class="number">13.</span>将本地的操作放回回收站
+     git stash
+ <span class="number">14.</span>从回收站中恢复本地的修改
+     git stash apply
+</code></pre><ul>
+<li><p>分支操作</p>
+<pre><code>  <span class="number">1.</span>查看分支
+      git branch
+  <span class="number">2.</span>创建分支
+      git branch branchname
+  <span class="number">3.</span>删除分支
+      git branch <span class="attribute">-d</span> branchname
+  <span class="number">4.</span>切换分支
+      git checkout branchname
+  <span class="number">5.</span>创建并切换分支
+      git checkout <span class="attribute">-b</span> branchname
+</code></pre></li>
+<li><p>远端仓库操作</p>
+<pre><code>  <span class="number">1.</span>克隆一个远端仓库
+      git clone <span class="built_in">URL</span>
+  <span class="number">2.</span>添加远端仓库
+      git remote <span class="built_in">add</span> name <span class="built_in">URL</span>
+  <span class="number">3.</span>更新远端仓库的分支和数据
+      git fetch origin master
+  <span class="number">4.</span>合并
+      git <span class="built_in">merge</span> origin master
+  <span class="number">5.</span>上传本地分支和数据到远端仓库
+      git push origin master
+  <span class="number">6.</span>跟踪远端仓库上的分支
+      git checkout <span class="comment">--track origin/testbranch</span>
+</code></pre></li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/23/git-使用详解/" data-id="m47fepmfqj8a3mx2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/11/18/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/21/Foundation-Kit-0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Foundation - Kit</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

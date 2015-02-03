@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数据类型 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="article" property="og:type">
+<meta content="数据类型" property="og:title">
+<meta content="http://yoursite.com/2014/10/21/数据类型/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta content="import 
+int main(int argc, const char * argv[])
+{
+
+       NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
+    float floatingVar = 331.79;
+    double doubleVar = 8.44e+11;
+    NSLog(@"floati" property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/21/数据类型/" class="article-date">
+  <time datetime="2014-10-21T06:54:44.000Z" itemprop="datePublished">Oct 21 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据类型
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="import_">import <Foundation/Foundation.h></h1>
+<pre><code><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])
+{
+
+       <span class="built_in">NSAutoreleasePool</span> *pool = [[<span class="built_in">NSAutoreleasePool</span> alloc]init];
+    <span class="keyword">float</span> floatingVar = <span class="number">331.79</span>;
+    <span class="keyword">double</span> doubleVar = <span class="number">8.44e+11</span>;
+    <span class="built_in">NSLog</span>(@<span class="string">"floatingVar = %f"</span>,floatingVar);<span class="comment">//%f为十进制形式的格式转换符，表示使用浮点数小数形式打印出来</span>
+    <span class="built_in">NSLog</span>(@<span class="string">"doubleVar = %e"</span>,doubleVar);<span class="comment">//%e表示用科学计数法的形式打印出来浮点数</span>
+    <span class="built_in">NSLog</span>(@<span class="string">"doubleVar = %g"</span>,doubleVar);<span class="comment">//用最短的方式表示一个浮点数，并且使用科学计数法</span>
+
+    <span class="keyword">float</span> a = <span class="number">33333.33333</span>;
+    <span class="keyword">double</span> b = <span class="number">33333.333333333333333</span>;
+    <span class="built_in">NSLog</span>(@<span class="string">"%f"</span>,a);<span class="comment">//由于a是单精度浮点型，有效位只有7位，而整数已占5位，故小数二位之后均为无效数字</span>
+    <span class="built_in">NSLog</span>(@<span class="string">"%f"</span>,b);<span class="comment">//b是双精度型，有效位为16位，但OC规定小数后最多保留6位，其余部分四舍五入</span>
+
+    [pool drain];
+
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/21/数据类型/" data-id="n0lvgv8c6cj6d7dm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/21/Foundation-Kit-0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Foundation - Kit
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/20/谓词的使用1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">谓词的使用1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

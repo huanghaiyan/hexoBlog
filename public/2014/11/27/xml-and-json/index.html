@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>xml and json | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="article" property="og:type">
+<meta content="xml and json" property="og:title">
+<meta content="http://yoursite.com/2014/11/27/xml-and-json/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta content="XML
+SMX解析
+
+创建XML解析对象
+ NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"bookstore" withExtension:@"xml"];
+ NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:fileURL];
+
+设置XML解析" property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-xml-and-json" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/27/xml-and-json/" class="article-date">
+  <time datetime="2014-11-27T12:37:16.000Z" itemprop="datePublished">Nov 27 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      xml and json
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="XML">XML</h3>
+<h4 id="SMX解析">SMX解析</h4>
+<ol>
+<li><p>创建XML解析对象</p>
+<pre><code> <span class="built_in">NSURL</span> *fileURL = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:@<span class="string">"bookstore"</span> withExtension:@<span class="string">"xml"</span>];
+ NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:fileURL];
+</code></pre></li>
+<li><p>设置XML解析对象代理</p>
+</li>
+<li><p>开始解析</p>
+<pre><code> <span class="built_in">BOOL</span> flag = [xmlParser parse];
+ <span class="keyword">if</span>(!flag){
+     <span class="built_in">NSLog</span>(@<span class="string">"xmlParser parse error."</span>);
+ } 
+</code></pre></li>
+</ol>
+<h4 id="NSXMLPqrser对象代理方法">NSXMLPqrser对象代理方法</h4>
+<ul>
+<li><p>(void)parserDidStartDocument:(NSXMLParser *)parser //当开始解析XML文档的时候，调用这个方法。通常在这个方法⾥， 创建存储<br>模型对象的数组</p>
+</li>
+<li><p>(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict   //当开始解析，遇到元素的开始标签的时候，调用这个方法。通常在这个方法里， 创建模型对象或解析标签中的属性保存在模型对象中</p>
+</li>
+<li><p>(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string   //当解析到xml标签的文本内容的时候，调⽤这个方法, 通常在这里先暂存解析到的文本内容</p>
+</li>
+<li><p>(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName //当解析xml内容遇到结束标签的时候，调用这个方法。通常在这个方法里，需要将模型对象保存入数组中或把标签对应的文本内容解析出来，保存在模型对象中（KVC）</p>
+</li>
+<li><p>(void)parserDidEndDocument:(NSXMLParser *)parser //当整个xml文档全部解析结束的时候，该⽅法会被调⽤</p>
+</li>
+<li><p>(void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError  //当遇到解析错误时，该方法会被调⽤</p>
+</li>
+</ul>
+<h4 id="DOM解析(以GDataXMLNode为例)">DOM解析(以GDataXMLNode为例)</h4>
+<p>使用:</p>
+<p>添加头文件搜索路径: Build Settings-&gt;Header Search Paths-&gt;”/usr/include/libxml2”<br>用非ARC的方式编译GDataXMLNode.m文件 -fno-objc-arc<br>链接libxml2.dylib该动态库 Build Phases-&gt;Link Binary With Libraries-&gt;”libxml2.dylib”</p>
+<pre><code>/*
+<span class="bullet">* </span><span class="xml"><span class="tag">&lt;<span class="title">节点</span>&gt;</span></span> (GDataXMLNode)
+<span class="bullet">* </span>根据 DOM，XML ⽂文档中的每个成分都是⼀一个节点。
+<span class="bullet">* </span>DOM 是这样规定的：
+<span class="bullet">* </span>整个⽂文档是⼀一个⽂文档节点
+<span class="bullet">* </span>每个 XML 标签是⼀一个元素节点
+<span class="bullet">* </span>包含在 XML 元素中的⽂文本是⽂文本节点
+<span class="bullet">* </span>每⼀一个 XML 属性是⼀一个属性节点
+<span class="bullet">* </span>注释属于注释节点
+*/
+</code></pre><ol>
+<li><p>根据XML文件创建NSData对象</p>
+<pre><code> NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@<span class="string">"bookstore withExtension:@"</span>xml<span class="string">"];</span>
+ NSData *data = [NSData dataWithContentsOfURL:fileURL];
+</code></pre></li>
+<li><p>根据NSData对象创建GDataXMLDocument对象(即DOM模型对象),该对象在内存中是以树形结构存储的</p>
+<pre><code> <span class="type">GDataXMLDocument</span> *doc = [[<span class="type">GDataXMLDocument</span> alloc] initWithData:<span class="typedef"><span class="keyword">data</span> options:0 error:nil];</span>
+</code></pre></li>
+<li><p>通过DOM模型对象,取出XML文件的根元素</p>
+<pre><code><span class="attribute"> GDataXMLElement *rootElement </span>=<span class="string"> [doc rootElement];</span>
+</code></pre></li>
+<li><p>由于是树形结构,所以,可以根据子元素的名字使用根元素获取到所有子元素,并类推获得子元素的子元素</p>
+<pre><code> <span class="keyword">for</span> (GDataXMLElement <span class="variable">*element</span> in elements) {
+     <span class="regexp">//</span> 创建图书对象
+     YMBook <span class="variable">*book</span> = [[YMBook alloc] init];
+     <span class="regexp">//</span> 根据属性名字，解析book元素的属性值
+     book.category = [[element attributeForName:kCategory] stringValue];
+     <span class="regexp">//</span> 解析book的⼦子元素包含的⽂文本内容及其⼦子元素的属性
+     GDataXMLElement <span class="variable">*titleElement</span> = [element elementsForName:kTitle][<span class="number">0</span>];
+     book.title = [titleElement stringValue];
+     book.lang = [[titleElement attributeForName:kLanguage] stringValue];
+     GDataXMLElement <span class="variable">*authorElement</span> = [element elementsForName:kAuthor][<span class="number">0</span>];
+     book.author = [authorElement stringValue];
+     GDataXMLElement <span class="variable">*yearElement</span> = [element elementsForName:kYear][<span class="number">0</span>];
+     book.year = [yearElement stringValue];
+     GDataXMLElement <span class="variable">*priceElement</span> = [element elementsForName:kPrice][<span class="number">0</span>];
+     book.price = [priceElement stringValue];
+     [_bookStore addObject:book];
+ }
+</code></pre><h4 id="JSON">JSON</h4>
+</li>
+</ol>
+<p>从结构上看,所有的数据(data)最终都可以分解成三种类型:</p>
+<ul>
+<li><p>第一种类型是标量(scalar),也就是一个单独的字符串(string)或数字(numbers),比如”北京”这个单独的次</p>
+</li>
+<li><p>第二种类型是序列(sequence),也就是若干个相关的数据按照一定顺序并列在一起,又叫做数组(array)或列表(List),比如”北京,上海”</p>
+</li>
+<li><p>第三种类型是映射(mapping),也就是一个名/值对(Name/value),即数据有一个名称,还有一个与之相对应的值,这又称作散列(hash)或字典(dictionary),比如”首都:北京”</p>
+</li>
+</ul>
+<p>Json的规定</p>
+<ol>
+<li>并列的数据之间用逗号(“,”)分隔</li>
+<li>映射用冒号(“:”)表示  </li>
+<li>并列数据的集合(数组)用方括号(“[]”)表示</li>
+<li><p>映射的集合(对象)用大括号(“{}”)表示</p>
+<pre><code> rfc-<span class="number">4627</span>
+ www<span class="preprocessor">.json</span><span class="preprocessor">.org</span>/json-<span class="built_in">zh</span><span class="preprocessor">.htm</span>
+ www<span class="preprocessor">.sojson</span><span class="preprocessor">.com</span> 
+</code></pre></li>
+</ol>
+<h4 id="NSJSONSerialization">NSJSONSerialization</h4>
+<pre><code>+ (<span class="tag">id</span>)<span class="tag">JSONObjectWithData</span><span class="pseudo">:(NSData</span> *)<span class="tag">data</span> <span class="tag">options</span><span class="pseudo">:(NSJSONReadingOptions)opt</span> <span class="tag">error</span><span class="pseudo">:(NSError</span> **)<span class="tag">error</span>
++ (<span class="tag">NSData</span> *)<span class="tag">dataWithJSONObject</span><span class="pseudo">:(id)obj</span> <span class="tag">options</span><span class="pseudo">:(NSJSONWritingOptions)opt</span> <span class="tag">error</span><span class="pseudo">:(NSError</span> **)<span class="tag">error</span>
+</code></pre><h4 id="JSONKit">JSONKit</h4>
+<p>使用:-fno-objc-arc<br>序列化:NSArray  NSDictionary  NSString</p>
+<pre><code>– <span class="constant">JSONData</span>
+– <span class="constant">JSONDataWithOptions</span><span class="symbol">:includeQuotes</span><span class="symbol">:error</span><span class="symbol">:</span>
+- <span class="constant">JSONDataWithOptions</span><span class="symbol">:serializeUnsupportedClassesUsingDelegate</span><span class="symbol">:selector</span><span class="symbol">:error</span><span class="symbol">:</span>
+- <span class="constant">JSONDataWithOptions</span><span class="symbol">:serializeUnsupportedClassesUsingBlock</span><span class="symbol">:error</span><span class="symbol">:</span>
+– <span class="constant">JSONString</span>
+– <span class="constant">JSONStringWithOptions</span><span class="symbol">:includeQuotes</span><span class="symbol">:error</span><span class="symbol">:</span>
+-<span class="constant">JSONStringWithOptions</span><span class="symbol">:serializeUnsupportedClassesUsingDelegate</span><span class="symbol">:selector</span><span class="symbol">:error</span><span class="symbol">:</span>
+– <span class="constant">JSONStringWithOptions</span><span class="symbol">:serializeUnsupportedClassesUsingBlock</span><span class="symbol">:error</span><span class="symbol">:</span>
+</code></pre><p>反序列化:NSData  NSString</p>
+<pre><code>– objectFromJSONData
+– objectFromJSONDataWithParseOptions:
+– objectFromJSONDataWithParseOptions:<span class="built_in">error</span>:
+– mutableObjectFromJSONData
+– mutableObjectFromJSONDataWithParseOptions:
+– mutableObjectFromJSONDataWithParseOptions:<span class="built_in">error</span>:
+– objectFromJSONString
+– objectFromJSONStringWithParseOptions:
+– objectFromJSONStringWithParseOptions:<span class="built_in">error</span>:
+– mutableObjectFromJSONString
+– mutableObjectFromJSONStringWithParseOptions:
+– mutableObjectFromJSONStringWithParseOptions:<span class="built_in">error</span>:
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/27/xml-and-json/" data-id="ao89j6l0p70u3tif" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/11/29/afnetworking学习网址/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AFNetworking学习网址
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/27/xml解析学习网址/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">XML解析学习网址</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

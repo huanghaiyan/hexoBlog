@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2015/1 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="website" property="og:type">
+<meta content="Hexo" property="og:title">
+<meta content="http://yoursite.com/archives/2015/01/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-mac环境下svn的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/22/mac环境下svn的使用/" class="article-date">
+  <time datetime="2015-01-22T12:55:10.000Z" itemprop="datePublished">Jan 22 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="MAC环境下SVN的使用">MAC环境下SVN的使用</h3>
+<p>1.创建代码仓库,用来存储客户端所上传的代码</p>
+<pre><code> 在/<span class="constant">User</span>/apple目录下新建一个svn目录,以后可以在svn目录下创建多个仓库目录
+ 打开终端,创建一个mycode仓库,输入指令 <span class="symbol">:svnadmin</span> create /<span class="constant">Users</span>/apple/svn/mycode
+</code></pre><p>2.配置svn的用户权限</p>
+<pre><code>主要是修改/svn/myceode/conf目录下的三个文件
+  <span class="number">1</span>.打开svnserve.conf,将下列配置项前面的<span class="comment">#和空格都去掉</span>
+      anon-access = <span class="built_in">read</span> 代表匿名访问的时候是只读的,若改为anon-access = none 代表禁止匿名访问,需要账号密码才能访问
+
+  <span class="number">2</span>.  打开passwd,在[users]下面添加账号和密码账号是mj,密码是<span class="number">123</span>
+
+  <span class="number">3</span>.打开authz,配置用户组和权限
+
+     我们可以将在passwd里添加的用户分配到不同的用户,就可以对不同的用户设置不同权限.
+     在[groups]下面添加组名和用户名,多个用户之间用逗号隔开
+     说明mj和jj都是属于topgroup这个组的,接下来在进行权限配置使用[/]代表svn服务器中的所有资源库
+    上面的配置说明topgroup这个组中的所有用户对所有资源库都有读写(r/w)权限,组名前面要用@
+    如果使用户名,不用加@,比如mj这个用户有读写权限
+
+<span class="number">4</span>.启动svn服务器
+
+    在终端输入下列指令:svnserve <span class="operator">-d</span> -r /Users/apple/svn 或者输入:svnserve <span class="operator">-d</span> -r /Users/apple/svn
+      <span class="number">5</span>.关闭svn服务器
+
+      如果你想要关闭svn服务器,最有效的办法是打开实用工具里面的活动监控器.
+</code></pre><p>3.使用svn客户端功能</p>
+<pre><code><span class="number">1.</span>从本地导入代码到服务器(第一次初始化导入)
+在终端输入:svn <span class="keyword">import</span> /Users/apple/Documents/eclipse_workspace/weibo svn:<span class="comment">//localhost/mycode/weibo — username=mj —passed =123 -m “初始化导入”   </span>
+意思是:将svn <span class="keyword">import</span> /Users/apple/Documents/eclipse_workspace/weibo 中所有内容,上传到服务器my code仓库的weibo目录下,后面双引号中的”初始化导入”是注释<span class="built_in">.</span>
+<span class="number">2.</span>从服务器端下载代码到客户端本地
+在终端中输入svn checkout svn:<span class="comment">//localhost/mycode — username=mj — password=123 /Users/apple/Document/code </span>
+意思:将服务器中的mycode仓库的内容下载到/Users/apple/Documents/code目录中
+<span class="number">3.</span>提交更改过的代码到服务器
+将服务器端的代码都下载到/Users/apple/Documents/code目录中,现在可以修改里面的代码,然后提交这些修改到服务器
+   <span class="number">1</span><span class="subst">&gt;</span> 打开终端,先定位到/Users/apple/Documents/code目录,输入:cd /Users/apple/Documents/code
+   <span class="number">2</span><span class="subst">&gt;</span> 输入提交指令:svn commit <span class="attribute">-m</span> “修改了main<span class="built_in">.</span>m “文件
+     这个指令会将/Users/apple/Documents/code下的所有修改都同步到服务器端,例如:只修改了main<span class="built_in">.</span>m文件,可以看到终端的打印信息:
+ <span class="number">4.</span>更新服务器端的代码到客户端
+   在终端中定位到客户端代码目录后,比如上面的/Users/apple/Document/code目录,然后再输入指令:svn update
+ <span class="number">5.</span>至于svn的其他用法,可以在终端输入:svn help
+ 这里列出一大堆svn指令,后面括号中的内容一般代表着指令的简称,例如:我们可以用svn ci代替svn commit 用svn co 代替 svn checkout
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/22/mac环境下svn的使用/" data-id="zz4ahffrthqg0l4j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-1.uiviewcontroller_xib的加载" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/17/1.uiviewcontroller_xib的加载/" class="article-date">
+  <time datetime="2015-01-17T09:33:49.000Z" itemprop="datePublished">Jan 17 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-UIViewController_xib的加载">1.UIViewController xib的加载</h2>
+<p>UIViewController在初始化的默认实现会先查找与其相关联的xib文件，当创建的xib文件名与控制器同名时，不需要具体指定该xib文件的名就可以实现默认的初始化。</p>
+<p>因为，如果没有明显的指定一个相关联的xib文件，当UIViewContrller在初始化的时候，就会加载跟UIViewController同名的文件。</p>
+<h2 id="2-UINavigationController">2.UINavigationController</h2>
+<p>UINavigationController作为一种容器适合管理跳板式（SpringBoard 如： 星巴克）这种结构的APP</p>
+<h4 id="优点">优点</h4>
+<ol>
+<li>清晰展现各入口</li>
+<li>容易记住各入口位置，方便快速找到</li>
+</ol>
+<h4 id="确定">确定</h4>
+<ol>
+<li>无法在多入口间灵活跳转，不适合任务操作</li>
+<li>容易形成更深的路径</li>
+<li>不能直接展现入口内容</li>
+<li>不能显示太多入口次级内容</li>
+</ol>
+<h2 id="3-UITabBarController">3.UITabBarController</h2>
+<p>UITabBarController作为一种容器适合管理底部标签式（TabBar 如： Instagram、微信、微博）这种结构的APP</p>
+<h4 id="优点-1">优点</h4>
+<ol>
+<li>清楚当前所在的入口位置</li>
+<li>轻松在各入口间频繁跳转且不会迷失方向</li>
+<li>直接展现最重要入口的内容信息（默认首页）</li>
+</ol>
+<h4 id="缺点">缺点</h4>
+<p>功能入口过多时，该模式显得笨重不实用(超过5个的时候会将其他控制器添加到一个更多界面)</p>
+<h2 id="4-UIViewControlller的生命周期中几个被调用的方法的名字以及分别在申请情况下被调用">4.UIViewControlller的生命周期中几个被调用的方法的名字以及分别在申请情况下被调用</h2>
+<ol>
+<li>- (id)initWithNibName:(NSString <em>)nibNameOrNil bundle:(NSBundle </em>)nibBundleOrNil;<br>当UIViewController在初始化加载xib文件时，该方法被调用。</li>
+<li>- (void)loadView;<br>当每次访问UIViewController的view(比如VController.view、self.view)并且view为nil，该方法就会被调用。</li>
+<li>- (void)viewWillUnload; </li>
+<li>- (void)viewDidUnload;</li>
+<li>- (void)viewDidLoad;<br>不管是通过xib文件还是重写loadView创建UIViewController的view，在view创建完毕后，最终都会调用该方法。</li>
+<li>- (void)viewWillAppear:(BOOL)animated;<br>当view将要呈现在UI界面上时会调用该方法。</li>
+<li>- (void)viewDidAppear:(BOOL)animated;<br>当view已经完全过渡到屏幕上时会调用该方法。</li>
+<li>- (void)viewWillDisappear:(BOOL)animated;<br>当view将要消失，或被覆盖、隐藏时会调用该方法。</li>
+<li>- (void)viewDidDisappear:(BOOL)animated;<br>当view已经完全消失，或被覆盖、隐藏时会调用该方法。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/17/1.uiviewcontroller_xib的加载/" data-id="tm14tqb3ycb8itm9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-fmdb使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/10/fmdb使用/" class="article-date">
+  <time datetime="2015-01-10T10:53:12.000Z" itemprop="datePublished">Jan 10 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/10/fmdb使用/">FMDB使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="FMDB">FMDB</h1>
+<p>===</p>
+<ol>
+<li>FMDB的背景：基于sqlite3封装的第三方库，而sqlite3属于轻量级数据库</li>
+</ol>
+<p>2.基本介绍</p>
+<ul>
+<li><p>数据库中数据类型：因为sqlite3采用的动态数据类型，所以从数据库中取值需要我们进行转码</p>
+<p>  数据类型   |存储的数据<br>  ———-   |—————-<br>  BLOB      |图片、音频<br>  TEXT      |文本<br>  INTEGER   |整形<br>  BOOLEAN   |布尔（会转化为0，1存储）<br>  DATE      |日期</p>
+</li>
+<li><p>从数据库中取出数据：<br>根据你在存在数据库中的类型，来使用对应的取值方法</p>
+</li>
+<li><p>表间数据操作</p>
+</li>
+<li></li>
+<li><p>执行语句：增删改查</p>
+<pre><code>增：1.<span class="operator"><span class="keyword">Insert</span>语句<span class="keyword">INSERT</span> <span class="keyword">INTO</span> TABLE_NAME <span class="keyword">VALUES</span> 
+(value1,value2,value3,...valueN)与表中一一对应
+      <span class="number">2.</span><span class="keyword">INSERT</span> <span class="keyword">INTO</span> TABLE_NAME (column1, column2, 
+      column3,...columnN)]<span class="keyword">VALUES</span> (value1, value2, 
+      value3,...valueN);</span>给指定行中插入数据
+删：<span class="operator"><span class="keyword">Delete</span>语句
+<span class="keyword">DELETE</span> <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> [条件];</span>
+改：<span class="operator"><span class="keyword">update</span>语句
+<span class="keyword">UPDATE</span> table_name  <span class="keyword">SET</span> column1 = value1, column2 = 
+value2...., columnN = valueN <span class="keyword">WHERE</span> [condition];</span>
+查：Selecte语句
+<span class="operator"><span class="keyword">SELECT</span> column1, column2, columnN <span class="keyword">FROM</span> table_name</span>
+</code></pre></li>
+<li><p>基于FMDB中的多线程FMDB</p>
+</li>
+</ul>
+<p>3.执行过程中，需要注意的事项：</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/10/fmdb使用/" data-id="h7f60m0pl9y0626b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cocoapods的使用及安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/10/cocoapods的使用及安装/" class="article-date">
+  <time datetime="2015-01-10T10:49:06.000Z" itemprop="datePublished">Jan 10 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CocoaPods的安装及使用">CocoaPods的安装及使用</h1>
+<p>===</p>
+<h2 id="CocoaPods介绍">CocoaPods介绍</h2>
+<hr>
+<pre><code>在iOS开发过程中，我们不可避免地使用第三方类库，但是类库的循环引用、更新等用手动操作的话会很费时和费力，所以，我们需要一款类库管理工具来管理我们使用的第三方类库。CocoaPods是iOS开发中最常用的类库管理工具。而且，绝大多数开源类库都支持CocoaPods。
+</code></pre><h2 id="CocoaPods的安装">CocoaPods的安装</h2>
+<hr>
+<p>1.CocoaPods的依赖环境</p>
+<p>（1.1）系统支持包安装：</p>
+<pre><code>&lt;<span class="number">1</span>&gt;安装Xcode
+&lt;<span class="number">2</span>&gt;安装Homebrew（包管理器）：$ ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span>
+</code></pre><p>（1.2）Ruby配置</p>
+<pre><code>在安装<span class="class">Ruby</span>之前，需要安装<span class="class">RVM</span>（<span class="class">Ruby</span>版本管理工具）：<span class="char">$ </span>curl -<span class="class">L</span> <span class="method">https:</span>//get.rvm.io | bash -s stable
+载入<span class="class">RVM</span>：<span class="char">$ </span>source ~/.rvm/scripts/rvm
+[检查<span class="class">RVM</span>安装是否正确：<span class="char">$ </span>rvm -v]
+使用<span class="class">RVM</span>安装<span class="class">Ruby</span>：<span class="char">$ </span>rvm install <span class="number">2.0</span><span class="number">.0</span>
+设置<span class="class">Ruby</span>版本：<span class="char">$ </span>rvm <span class="number">2.0</span><span class="number">.0</span> --default
+（如果安装的<span class="class">Ruby</span>为其他版本，也可以设置为默认版本。查看<span class="class">Ruby</span>版本号：<span class="char">$ </span>ruby -v）
+（注意：由于国内的网络环境，导致 rubygems.org 存放在 <span class="class">Amazon</span> <span class="class">S3</span> 上面的资源文件间歇性连接失败，因此使用gem或bundle时常常会遇到长久无响应的情况。解决方案是使用淘宝的 <span class="class">RubyGems</span> 镜像，它是一个完整 rubygems.org 镜像，你可以用此代替官方版本，同步频率目前为<span class="number">15</span>分钟一次以保证尽量与官方服务同步。，使用淘宝<span class="class">Rubygems</span>镜像访问配置如下： 
+<span class="char">$ </span>gem source --remove https//rubygems.org/
+<span class="char">$ </span>gem source -a <span class="method">http:</span>//ruby.taobao.org/
+验证命令：<span class="char">$ </span>gem source -l）
+</code></pre><p>（1.3）安装CocoaPods</p>
+<pre><code>运行命令：$ <span class="built_in">sudo</span> gem install cocoapods
+CocoaPods安装完成
+</code></pre><h2 id="CocoaPods的使用">CocoaPods的使用</h2>
+<hr>
+<p><code>使用CocoaPods管理第三方库首先要创建一个#Podfile#的文件，注意文件名必须是而且只有一个#Podfile#，有两种做法可以把第三方库文件导入工程</code></p>
+<p>1.1 直接在工程文件夹里加入Podfile文件</p>
+<pre><code>利用终端<span class="built_in">cd</span>到工程文件夹下创建Podfile
+</code></pre><p>1.2 不在工程文件夹下创建Podfile</p>
+<pre><code>注意：这种做法需在Podfile文件头写入：
+<span class="array">#xcodeproj </span><span class="string">"&lt;文件路径&gt;/&lt;工程名&gt;.xcodeproj"</span>#
+</code></pre><p>2 Podfile文件的编写格式</p>
+<pre><code>Podfile 是一个文件，用于定义项目所需要使用的第三方库。该文件支持高度定制，你可以根据个人喜好对其做出定制。
+source <span class="string">'https://github.com/CocoaPods/Specs.git'</span>
+
+<span class="built_in">platform</span> :ios, <span class="string">'6.0'</span>（指定支持的iOS系统最高版本版本）
+inhibit_all_warnings!
+
+xcodeproj <span class="string">'MyProject'</span>
+
+pod <span class="string">'ObjectiveSugar'</span>, <span class="string">'~&gt; 0.5'</span>
+
+target :test <span class="built_in">do</span>
+      pod <span class="string">'OCMock'</span>, <span class="string">'~&gt; 2.0.1'</span>
+<span class="function"><span class="keyword">end</span></span>
+
+post_install <span class="built_in">do</span> |installer|
+      installer.project.targets.<span class="keyword">each</span> <span class="built_in">do</span> |target|
+        puts <span class="string">"#{target.name}"</span>
+      <span class="function"><span class="keyword">end</span></span>
+<span class="function"><span class="keyword">end</span></span>
+（导入第三方库的版本规定的一些方式
+pod <span class="string">'AFNetworking'</span>     <span class="comment"> //不显式指定依赖库版本，表示每次都获取最新版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'2.0'</span>    <span class="comment"> //只使用2.0版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'&gt; 2.0'</span>    <span class="comment"> //使用高于2.0的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'&gt;= 2.0'</span>    <span class="comment"> //使用大于或等于2.0的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'&lt; 2.0'</span>    <span class="comment"> //使用小于2.0的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'&lt;= 2.0'</span>    <span class="comment"> //使用小于或等于2.0的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt; 0.1.2'</span>    <span class="comment"> //使用大于等于0.1.2但小于0.2的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt;0.1'</span>    <span class="comment"> //使用大于等于0.1但小于1.0的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt;0'</span>    <span class="comment"> //高于0的版本，写这个限制和什么都不写是一个效果，都表示使用最新版本）</span>
+</code></pre><p>3.CocoaPods的一些常用命令</p>
+<pre><code>3.1、pod install
+根据Podfile文件指定的内容，安装依赖库，如果有Podfile.<span class="operator"><span class="keyword">lock</span>文件而且对应的Podfile文件未被修改，则会根据Podfile.<span class="keyword">lock</span>文件指定的版本安装。
+每次更新了Podfile文件时，都需要重新执行该命令，以便重新安装Pods依赖库。
+<span class="number">3.2</span>、pod <span class="keyword">update</span>
+若果Podfile中指定的依赖库版本不是写死的，当对应的依赖库有了更新，无论有没有Podfile.<span class="keyword">lock</span>文件都会去获取Podfile文件描述的允许获取到的最新依赖库版本。
+<span class="number">3.3</span>、pod list 
+列出所有可用的第三方库
+<span class="number">3.4</span>、pod search &lt;类库名称&gt;
+查看类库是否支持CocoaPods</span>
+</code></pre><p>4.CocoaPods更新</p>
+<pre><code>cocoapods更新：<span class="built_in">sudo</span> gem update cocoapods
+更新预览版：<span class="built_in">sudo</span> gem update cocoapods pre
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/10/cocoapods的使用及安装/" data-id="nfoduz3u6ezx54sa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

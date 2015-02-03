@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="article" property="og:type">
+<meta content="Hexo" property="og:title">
+<meta content="http://yoursite.com/2015/01/17/1.uiviewcontroller_xib的加载/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta content="1.UIViewController xib的加载
+UIViewController在初始化的默认实现会先查找与其相关联的xib文件，当创建的xib文件名与控制器同名时，不需要具体指定该xib文件的名就可以实现默认的初始化。
+因为，如果没有明显的指定一个相关联的xib文件，当UIViewContrller在初始化的时候，就会加载跟UIViewController同名的文件。
+2.UINavigat" property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-1.uiviewcontroller_xib的加载" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/17/1.uiviewcontroller_xib的加载/" class="article-date">
+  <time datetime="2015-01-17T09:33:49.000Z" itemprop="datePublished">Jan 17 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-UIViewController_xib的加载">1.UIViewController xib的加载</h2>
+<p>UIViewController在初始化的默认实现会先查找与其相关联的xib文件，当创建的xib文件名与控制器同名时，不需要具体指定该xib文件的名就可以实现默认的初始化。</p>
+<p>因为，如果没有明显的指定一个相关联的xib文件，当UIViewContrller在初始化的时候，就会加载跟UIViewController同名的文件。</p>
+<h2 id="2-UINavigationController">2.UINavigationController</h2>
+<p>UINavigationController作为一种容器适合管理跳板式（SpringBoard 如： 星巴克）这种结构的APP</p>
+<h4 id="优点">优点</h4>
+<ol>
+<li>清晰展现各入口</li>
+<li>容易记住各入口位置，方便快速找到</li>
+</ol>
+<h4 id="确定">确定</h4>
+<ol>
+<li>无法在多入口间灵活跳转，不适合任务操作</li>
+<li>容易形成更深的路径</li>
+<li>不能直接展现入口内容</li>
+<li>不能显示太多入口次级内容</li>
+</ol>
+<h2 id="3-UITabBarController">3.UITabBarController</h2>
+<p>UITabBarController作为一种容器适合管理底部标签式（TabBar 如： Instagram、微信、微博）这种结构的APP</p>
+<h4 id="优点-1">优点</h4>
+<ol>
+<li>清楚当前所在的入口位置</li>
+<li>轻松在各入口间频繁跳转且不会迷失方向</li>
+<li>直接展现最重要入口的内容信息（默认首页）</li>
+</ol>
+<h4 id="缺点">缺点</h4>
+<p>功能入口过多时，该模式显得笨重不实用(超过5个的时候会将其他控制器添加到一个更多界面)</p>
+<h2 id="4-UIViewControlller的生命周期中几个被调用的方法的名字以及分别在申请情况下被调用">4.UIViewControlller的生命周期中几个被调用的方法的名字以及分别在申请情况下被调用</h2>
+<ol>
+<li>- (id)initWithNibName:(NSString <em>)nibNameOrNil bundle:(NSBundle </em>)nibBundleOrNil;<br>当UIViewController在初始化加载xib文件时，该方法被调用。</li>
+<li>- (void)loadView;<br>当每次访问UIViewController的view(比如VController.view、self.view)并且view为nil，该方法就会被调用。</li>
+<li>- (void)viewWillUnload; </li>
+<li>- (void)viewDidUnload;</li>
+<li>- (void)viewDidLoad;<br>不管是通过xib文件还是重写loadView创建UIViewController的view，在view创建完毕后，最终都会调用该方法。</li>
+<li>- (void)viewWillAppear:(BOOL)animated;<br>当view将要呈现在UI界面上时会调用该方法。</li>
+<li>- (void)viewDidAppear:(BOOL)animated;<br>当view已经完全过渡到屏幕上时会调用该方法。</li>
+<li>- (void)viewWillDisappear:(BOOL)animated;<br>当view将要消失，或被覆盖、隐藏时会调用该方法。</li>
+<li>- (void)viewDidDisappear:(BOOL)animated;<br>当view已经完全消失，或被覆盖、隐藏时会调用该方法。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/17/1.uiviewcontroller_xib的加载/" data-id="tm14tqb3ycb8itm9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/22/mac环境下svn的使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MAC环境下SVN的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/10/fmdb使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">FMDB使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

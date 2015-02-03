@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="website" property="og:type">
+<meta content="Hexo" property="og:title">
+<meta content="http://yoursite.com/page/2/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/19/事件/" class="article-date">
+  <time datetime="2014-11-19T02:29:24.000Z" itemprop="datePublished">Nov 19 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/19/事件/">事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.事件</p>
+<pre><code> <span class="operator">a</span>. 触摸事件(单点触摸,多点触摸及各种手势)
+ b. 晃动事件(重力,加速度等传感器)
+ c. 远程控制事件(线控耳机,airplay等)
+</code></pre><p>2.事件分发</p>
+<pre><code> 触摸—&gt;硬件中断—&gt;UIKit封装成UIEvent对象 (针对触摸事件)—&gt;当前运行的应用程序的事件队列—&gt;UIApplication对象—&gt;key window—&gt;Hit -TestingView或<span class="keyword">First</span> Responder
+</code></pre><p>3.事件响应</p>
+<pre><code> hitTest:withEvent:方法将会忽略隐藏(hidden = <span class="literal">YES</span>)的视图,禁止用户操作(userInteractionEnabled = <span class="literal">NO</span>)的视图,以及alpha级别小于<span class="number">0.01</span>(alpha&lt;<span class="number">0.01</span>)的视图
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/19/事件/" data-id="sbpcbz1aux0kae6f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/18/hello-world/" class="article-date">
+  <time datetime="2014-11-18T11:48:17.000Z" itemprop="datePublished">Nov 18 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/18/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="http://hexo.io" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs" target="_blank">documentation</a> to learn how to use.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/18/hello-world/" data-id="kcnv032jb9rmjqe0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-git-使用详解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/23/git-使用详解/" class="article-date">
+  <time datetime="2014-10-23T13:05:49.000Z" itemprop="datePublished">Oct 23 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/23/git-使用详解/">git 使用详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>git是什么？</p>
+<pre><code> Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。
+</code></pre></li>
+<li><p>git功能</p>
+<pre><code> 从一般开发者的角度来看，git有以下功能：
+ <span class="number">1.</span>从服务器上克隆数据库（包括代码和版本信息）到单机上。
+ <span class="number">2.</span>在自己的机器上创建分支，修改代码。
+ <span class="number">3.</span>在单机上自己创建的分支上提交代码。
+ <span class="number">4.</span>在单机上合并分支。
+ <span class="number">5.</span>新建一个分支，把服务器上最新版的代码fetch下来，然后跟自己的主分支合并。
+ <span class="number">6.</span>生成补丁（<span class="keyword">patch</span>），把补丁发送给主开发者。
+ <span class="number">7.</span>看主开发者的反馈，如果主开发者发现两个一般开发者之间有冲突（他们之间可以合作解决的冲突），就会要求他们先解决冲突，然后再由其中一个人提交。如果主开发者可以自己解决，或者没有冲突，就通过。
+ <span class="number">8.</span>一般开发者之间解决冲突的方法，开发者之间可以使用pull 命令解决冲突，解决完冲突之后再向主开发者提交补丁。
+</code></pre></li>
+<li><p>git的三种状态</p>
+<pre><code> <span class="function">staged(已暂存)</span>：表示把已经修改的文件放入下次提交时要保存的清单中。
+ <span class="function">modified(已修改)</span>：表示修改了整个文件，但是还没有提交保存。
+ <span class="function">committed(已提交)</span>：表示该文件已经安全地保存在本地数据库中了。
+</code></pre></li>
+<li><p>git的常用操作命令</p>
+<pre><code> <span class="number">1.</span>初始化仓库
+     git init
+     git init <span class="comment">--bare 建立的是裸仓库</span>
+ <span class="number">2.</span>配置用户信息
+     git config <span class="comment">--global user.name "username"</span>
+     git config <span class="comment">--global user.email tom@qq.com</span>
+ <span class="number">3.</span>查看配置信息
+     git config <span class="comment">--list</span>
+ <span class="number">4.</span>添加文件到暂存区
+     git <span class="built_in">add</span> filename
+     git <span class="built_in">add</span> *(添加所有文件到暂存区)或者git <span class="built_in">add</span> <span class="comment">--all</span>
+ <span class="number">5.</span>移除文件
+     git rm filename
+ <span class="number">6.</span>重命名一个文件
+     git mv oldfilename newfilename
+ <span class="number">7.</span>提交到暂存区
+     git commit -m <span class="string">"message"</span> 只会提交暂存区（staged）里面的内容
+ <span class="number">8.</span>查看工作目录的状态
+     git status
+ <span class="number">9.</span>查看提交的历史记录
+     git <span class="built_in">log</span>
+ <span class="number">10.</span>查看文件的改变
+     git diff filename 跟工作区进行比较
+     git diff <span class="comment">--cached filename 跟暂存区比较</span>
+ <span class="number">11.</span>撤销加入暂存区的操作
+     git reset <span class="comment">--filename </span>
+ <span class="number">12.</span>撤销修改的操作
+     git checkout <span class="comment">--file</span>
+ <span class="number">13.</span>将本地的操作放回回收站
+     git stash
+ <span class="number">14.</span>从回收站中恢复本地的修改
+     git stash apply
+</code></pre><ul>
+<li><p>分支操作</p>
+<pre><code>  <span class="number">1.</span>查看分支
+      git branch
+  <span class="number">2.</span>创建分支
+      git branch branchname
+  <span class="number">3.</span>删除分支
+      git branch <span class="attribute">-d</span> branchname
+  <span class="number">4.</span>切换分支
+      git checkout branchname
+  <span class="number">5.</span>创建并切换分支
+      git checkout <span class="attribute">-b</span> branchname
+</code></pre></li>
+<li><p>远端仓库操作</p>
+<pre><code>  <span class="number">1.</span>克隆一个远端仓库
+      git clone <span class="built_in">URL</span>
+  <span class="number">2.</span>添加远端仓库
+      git remote <span class="built_in">add</span> name <span class="built_in">URL</span>
+  <span class="number">3.</span>更新远端仓库的分支和数据
+      git fetch origin master
+  <span class="number">4.</span>合并
+      git <span class="built_in">merge</span> origin master
+  <span class="number">5.</span>上传本地分支和数据到远端仓库
+      git push origin master
+  <span class="number">6.</span>跟踪远端仓库上的分支
+      git checkout <span class="comment">--track origin/testbranch</span>
+</code></pre></li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/23/git-使用详解/" data-id="m47fepmfqj8a3mx2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Foundation-Kit-0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/21/Foundation-Kit-0/" class="article-date">
+  <time datetime="2014-10-21T12:01:21.000Z" itemprop="datePublished">Oct 21 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/21/Foundation-Kit-0/">Foundation - Kit</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Foudation对象主要分类">Foudation对象主要分类</h4>
+<ul>
+<li>值对象</li>
+<li>集合</li>
+<li>操作系统服务 包括三个方面: ⽂文件系统、URL、进程间通讯 。</li>
+<li>通知</li>
+<li>归档和序列化</li>
+<li>表达式和条件判断</li>
+<li>Objective-C语言服务</li>
+</ul>
+<h4 id="有用数据类型">有用数据类型</h4>
+<ul>
+<li>范围(NSRange)</li>
+</ul>
+<hr>
+<pre><code>    <span class="keyword">typedef</span> <span class="keyword">struct</span> _<span class="built_in">NSRange</span>
+    {
+        NSUInteger location;
+        NSUInteger length;
+    }<span class="built_in">NSRange</span>;
+</code></pre><hr>
+<p>创建NSRange的三种方式：</p>
+<hr>
+<pre><code><span class="number">1.</span>直接给字段赋值
+
+    NSRange <span class="keyword">range</span>;
+    <span class="keyword">range</span>.location =<span class="number"> 17</span>;
+    <span class="keyword">range</span>.length =<span class="number"> 4</span>;
+<span class="number">
+2</span>.C语⾔言的聚合结构赋值机制(花括号)
+
+    NSRange <span class="keyword">range</span> = <span class="number">{17</span>,<span class="number"> 4</span>};
+<span class="number">
+3</span>.cocoa提供的NSMakeRange()函数
+
+    NSRange <span class="keyword">range</span> = NSMakeRange<span class="number">(17</span>,<span class="number"> 4</span>);
+</code></pre><hr>
+<ul>
+<li><p>几何数据类型 (这个属于CoreGraphics框架)</p>
+<ul>
+<li>CGPoint</li>
+<li>CGSize</li>
+<li>CGRect</li>
+</ul>
+</li>
+</ul>
+<h4 id="Foundation_的一些常用类">Foundation 的一些常用类</h4>
+<ul>
+<li><p>字符串</p>
+<ul>
+<li><p>NSString</p>
+<p>创建字符串：</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<pre><code>    NSString *str = @"hello,world";
+    NSString *height = [NSString stringWithFormat:@"Your height is %d feet,%d inches",5,11];
+
+实例方法：
+
+-<span class="ruby"> 字符串长度：
+</span>
+        -<span class="ruby"> （<span class="constant">NSUInteger</span>）length;
+</span>
+-<span class="ruby"> 字符串比较：
+</span>
+        -<span class="ruby">（<span class="constant">BOOL</span>）<span class="symbol">isEqualToString:</span>(<span class="constant">NSString</span> *)aString;
+</span>        -<span class="ruby">(<span class="constant">NSComparisonResult</span>)<span class="symbol">compare:</span>(<span class="constant">NSString</span> *)string;
+</span>        -<span class="ruby">(<span class="constant">NSComparisonResult</span>)<span class="symbol">compare:</span>(<span class="constant">NSString</span> *)string <span class="symbol">options:</span>(<span class="constant">NSStringCompareOptions</span>)mask;</span>
+</code></pre><hr>
+<ul>
+<li><p>集合大家族</p>
+<ul>
+<li>NSArray、NSMutableArray</li>
+<li>NSEnumerator</li>
+<li>NSDictionary、NSMutableDictionary</li>
+</ul>
+</li>
+</ul>
+<hr>
+<pre><code>创建字典：
+
+    <span class="number">1.</span> +（id）dictionaryWithObjectsAndKeys:(id) firstObject,<span class="keyword">...</span>;
+    <span class="number">2.</span> @{key:value,<span class="keyword">...</span>};
+
+访问字典中的对象：
+
+    <span class="number">1.</span> -（id）objectForKey:(id) aKey;
+    <span class="number">2.</span> dict[key];
+
+创建可变字典：
+
+    +（id）dictionaryWithCapacity:(NSUInteger) numItems;
+
+添加元素：
+
+    - （void）setObject:(id)anObject forKey:(id) aKey;
+
+删除元素：
+
+    -（void）removeObjectForKey:(id)aKey;
+</code></pre><hr>
+<ul>
+<li><p>其他数值对象</p>
+<ul>
+<li>NSNumber</li>
+</ul>
+</li>
+</ul>
+<hr>
+<pre><code>装箱：
+
+创建<span class="built_in">NSNumber</span>对象(将基本数据类型封装成<span class="built_in">NSNumber</span>对象)
+
+    <span class="number">1.</span>
+    + (<span class="built_in">NSNumber</span> *) numberWithChar: (<span class="keyword">char</span>) value; 
+    ￼￼+ (<span class="built_in">NSNumber</span> *) numberWithInt: (<span class="keyword">int</span>) value;                                              
+    + (<span class="built_in">NSNumber</span> *) numberWithFloat: (<span class="keyword">float</span>) value;  
+    + (<span class="built_in">NSNumber</span> *) numberWithBool: (<span class="built_in">BOOL</span>) value;
+
+
+    <span class="number">2.</span>
+    <span class="built_in">NSNumber</span> *number;￼    
+    number = @<span class="string">'X'</span>; <span class="comment">//字符型    </span>
+    ￼number = @<span class="number">12345</span>; <span class="comment">//整型</span>
+    number = @<span class="number">12345</span>ul; <span class="comment">//⽆无符号整型￼</span>
+    number = @<span class="number">123.45</span>f; <span class="comment">//浮点型</span>
+    number = @YES;  <span class="comment">//布尔型</span>
+
+开箱：
+
+从<span class="built_in">NSNumber</span>对象中取出基本数据类型
+
+    -（<span class="keyword">char</span>）charValue;
+    - (<span class="keyword">int</span>) intValue;
+    - (<span class="keyword">float</span>) floatValue;
+    - (<span class="built_in">BOOL</span>) boolValue;
+    - (<span class="built_in">NSString</span> *) stringValue;
+
+- NSValue 
+
+创建NSValue对象，即装箱
+
+    +（NSValue *）valueWithBytes:(<span class="keyword">const</span> <span class="keyword">void</span> *)value objType:(<span class="keyword">const</span> <span class="keyword">char</span> *)type;
+
+提取NSValue中的数值，即开箱
+
+    -（<span class="keyword">void</span>）geetValue:(<span class="keyword">void</span> *)buffer;
+
+Cocoa提供的将常用<span class="keyword">struct</span>型数据与NSValue互相转换的便捷方法
+
+    + (NSValue *)valueWithPoint:(NSPoint)aPoint;
+    + (NSValue *)valueWithSize:(NSSize)size;
+    + (NSValue *)valueWithRect:(NSRect)rect;
+
+
+    - (NSPoint)pointValue;
+    - (NSSize)sizeValue;
+    - (NSRect)rectValue;
+
+- NSNull
+创建NSNull对象
+
+    +（NSNull *）null;        
+</code></pre><hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/21/Foundation-Kit-0/" data-id="2t6728pal9x6l9to" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/21/数据类型/" class="article-date">
+  <time datetime="2014-10-21T06:54:44.000Z" itemprop="datePublished">Oct 21 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/21/数据类型/">数据类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="import_">import <Foundation/Foundation.h></h1>
+<pre><code><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])
+{
+
+       <span class="built_in">NSAutoreleasePool</span> *pool = [[<span class="built_in">NSAutoreleasePool</span> alloc]init];
+    <span class="keyword">float</span> floatingVar = <span class="number">331.79</span>;
+    <span class="keyword">double</span> doubleVar = <span class="number">8.44e+11</span>;
+    <span class="built_in">NSLog</span>(@<span class="string">"floatingVar = %f"</span>,floatingVar);<span class="comment">//%f为十进制形式的格式转换符，表示使用浮点数小数形式打印出来</span>
+    <span class="built_in">NSLog</span>(@<span class="string">"doubleVar = %e"</span>,doubleVar);<span class="comment">//%e表示用科学计数法的形式打印出来浮点数</span>
+    <span class="built_in">NSLog</span>(@<span class="string">"doubleVar = %g"</span>,doubleVar);<span class="comment">//用最短的方式表示一个浮点数，并且使用科学计数法</span>
+
+    <span class="keyword">float</span> a = <span class="number">33333.33333</span>;
+    <span class="keyword">double</span> b = <span class="number">33333.333333333333333</span>;
+    <span class="built_in">NSLog</span>(@<span class="string">"%f"</span>,a);<span class="comment">//由于a是单精度浮点型，有效位只有7位，而整数已占5位，故小数二位之后均为无效数字</span>
+    <span class="built_in">NSLog</span>(@<span class="string">"%f"</span>,b);<span class="comment">//b是双精度型，有效位为16位，但OC规定小数后最多保留6位，其余部分四舍五入</span>
+
+    [pool drain];
+
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/21/数据类型/" data-id="n0lvgv8c6cj6d7dm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-谓词的使用1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/20/谓词的使用1/" class="article-date">
+  <time datetime="2014-10-20T13:26:48.000Z" itemprop="datePublished">Oct 20 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/20/谓词的使用1/">谓词的使用1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="QYPerson-h">QYPerson.h</h3>
+<pre><code><span class="preprocessor">#import <span class="title">&lt;Foundation/Foundation.h&gt;</span></span>
+
+<span class="class"><span class="keyword">@interface</span> <span class="title">QYPerson</span> : <span class="title">NSObject</span></span>
+<span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSString</span> *name;
+<span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSNumber</span> *age;
+
++(instancetype)personWithName:(<span class="built_in">NSString</span> *)name andAge:(<span class="built_in">NSNumber</span> *)age;
+
+<span class="keyword">@end</span>
+</code></pre><h3 id="QYPerson-m">QYPerson.m</h3>
+<pre><code><span class="preprocessor">#import <span class="title">"QYPerson.h"</span></span>
+
+<span class="class"><span class="keyword">@implementation</span> <span class="title">QYPerson</span></span>
+
++(instancetype)personWithName:(<span class="built_in">NSString</span> *)name andAge:(<span class="built_in">NSNumber</span> *)age
+{
+        QYPerson *person = [[QYPerson alloc] init];
+        <span class="keyword">if</span> (person) {
+        person<span class="variable">.name</span> = name;
+        person<span class="variable">.age</span> = age;
+    }
+    <span class="keyword">return</span> person;
+}
+
+- (<span class="built_in">NSString</span> *)description
+{
+    <span class="keyword">return</span> [<span class="built_in">NSString</span> stringWithFormat:@<span class="string">"name:%@, age:%@"</span>, _name, _age];
+}
+
+<span class="keyword">@end</span>
+</code></pre><h3 id="main-m">main.m</h3>
+<pre><code><span class="preprocessor">#import <span class="title">&lt;Foundation/Foundation.h&gt;</span></span>
+<span class="preprocessor">#import <span class="title">"QYPerson.h"</span></span>
+
+<span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])
+{
+
+        @autoreleasepool {
+
+            <span class="comment">// cocoa中的谓词，原理和用法都类似与SQL中where，相当与其过滤</span>
+
+        <span class="comment">// 0. 定义 (predicateWthFormat:...)</span>
+
+        <span class="comment">// 1. 谓词中的《关系运算符》的使用</span>
+            <span class="built_in">NSArray</span> *numArr = @[@<span class="number">12</span>, @<span class="number">34</span>, @<span class="number">128</span>, @<span class="number">99</span>, @<span class="number">3899</span>, @<span class="number">789</span>];
+
+        <span class="comment">// 1.1 创建谓词对象</span>
+        <span class="comment">// 过滤数组中大于100的数字</span>
+        <span class="comment">// 关系运算符：&gt;,&lt;,&gt;=,&lt;=,==,!=</span>
+        <span class="comment">// 谓词中，self代表应用谓词逻辑的对象本身</span>
+        NSPredicate *numPredicate = [NSPredicate predicateWithFormat:@<span class="string">"self &gt; 100"</span>];
+
+        <span class="comment">// 1.2 对数组使用谓词进行过滤</span>
+        <span class="built_in">NSArray</span> *numResult = [numArrfilteredArrayUsingPredicate:numPredicate];
+        <span class="built_in">NSLog</span>(@<span class="string">"&gt;&gt;&gt;1:%@"</span>, numResult);
+
+        <span class="comment">// 2. 谓词中《逻辑运算符》的使用</span>
+        <span class="built_in">NSArray</span> *personArr = @[
+                           [QYPerson personWithName:@<span class="string">"niuer"</span> andAge:@<span class="number">20</span>],
+                           [QYPerson personWithName:@<span class="string">"zhangsan"</span> andAge:@<span class="number">30</span>],
+                           [QYPerson personWithName:@<span class="string">"lisi"</span> andAge:@<span class="number">40</span>],
+                           [QYPerson personWithName:@<span class="string">"wangwu"</span> andAge:@<span class="number">50</span>],
+                           [QYPerson personWithName:@<span class="string">"zhaoliu"</span> andAge:@<span class="number">60</span>],
+                           [QYPerson personWithName:@<span class="string">"tiANqi"</span> andAge:@<span class="number">70</span>],
+                           ];
+
+        <span class="comment">// 2.1</span>
+        <span class="comment">// 过滤数组中年龄&gt;40，并且名字不等于zhaoliude的对象</span>
+        <span class="comment">// 逻辑运算符：and或者&amp;&amp;代表与逻辑 or或者||代表或逻辑</span>
+        NSPredicate *personPredicate = [NSPredicate predicateWithFormat:@<span class="string">"age &gt; 40 and name != 'zhaoliu'"</span>];
+
+        <span class="comment">// 2.2</span>
+        <span class="built_in">NSArray</span>*personResult=
+        [personArrfilteredArrayUsingPredicate:personPredicate];
+            <span class="built_in">NSLog</span>(@<span class="string">"&gt;&gt;&gt;2.%@"</span>, personResult);
+
+        <span class="comment">// 2.3</span>
+        <span class="comment">// ALL ANY</span>
+        NSPredicate *pre = [NSPredicate predicateWithFormat:@<span class="string">"ALL age &gt; 50"</span>];
+        <span class="keyword">if</span> ([pre evaluateWithObject:personArr]) {
+            <span class="built_in">NSLog</span>(@<span class="string">"evaluate OK."</span>);
+        } <span class="keyword">else</span> {
+            <span class="built_in">NSLog</span>(@<span class="string">"evaluate NOK."</span>);
+        }
+        pre = [NSPredicate predicateWithFormat:@<span class="string">"ANY age &lt; 50"</span>];
+        <span class="keyword">if</span> ([pre evaluateWithObject:personArr]) {
+            <span class="built_in">NSLog</span>(@<span class="string">"&gt;&gt;&gt;evaluate OK."</span>);
+        } <span class="keyword">else</span> {
+            <span class="built_in">NSLog</span>(@<span class="string">"&gt;&gt;&gt;evaluate NOK."</span>);
+        }
+
+        <span class="comment">// 3. 谓词中使用范围运算符: IN、BETWEEN</span>
+        <span class="comment">// 年龄在20岁到50岁之间 age &gt;=20 and age &lt;= 50 age, age between{20,50}</span>
+        personPredicate = [NSPredicate predicateWithFormat:@<span class="string">"age between {20, 50}"</span>];
+        personResult = [personArr filteredArrayUsingPredicate:personPredicate];
+        <span class="built_in">NSLog</span>(@<span class="string">"&gt;&gt;&gt;3:%@"</span>, personResult);
+
+        <span class="comment">// 4. 字符串使用谓词</span>
+        <span class="comment">// BEGINSWITH、ENDSWITH、CONTAINS [c]不区分大小写 [d]不区分发音符号 [cd]即不也不</span>
+        personPredicate = [NSPredicate predicateWithFormat:@<span class="string">"name beginswith[cd] 'zh'"</span>];
+        personResult = [personArr filteredArrayUsingPredicate:personPredicate];
+        <span class="built_in">NSLog</span>(@<span class="string">"&gt;&gt;&gt;4:%@"</span>, personResult);
+
+        personPredicate = [NSPredicate predicateWithFormat:@<span class="string">"name contains[cd] 'an'"</span>];
+        personResult = [personArr filteredArrayUsingPredicate:personPredicate];
+        <span class="built_in">NSLog</span>(@<span class="string">"&gt;&gt;&gt;4.2:%@"</span>, personResult);
+
+        <span class="comment">// 5. 谓词中通配符的使用</span>
+        <span class="comment">// ? *</span>
+        <span class="comment">// LIKE 也可以加[cd]</span>
+        <span class="comment">// 过滤数组，取出第三个字母为a的对象</span>
+        personPredicate = [NSPredicate predicateWithFormat:@<span class="string">"name LIKE[cd] '??a*'"</span>];
+        personResult = [personArr filteredArrayUsingPredicate:personPredicate];
+        <span class="built_in">NSLog</span>(@<span class="string">"&gt;&gt;&gt;5:%@"</span>, personResult);
+
+        <span class="comment">// 6. 谓词模版</span>
+        <span class="comment">// 6.1 键路径 %K</span>
+        <span class="built_in">NSString</span> *keyPath = @<span class="string">"age"</span>;
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@<span class="string">"%K &gt; %@"</span>, keyPath, @<span class="number">30</span>];
+        <span class="keyword">for</span> (QYPerson *person in personArr) {
+            <span class="keyword">if</span> ([predicate evaluateWithObject:person]) {
+                <span class="built_in">NSLog</span>(@<span class="string">"person:%@"</span>, person);
+            }
+        }
+        <span class="comment">// 6.2 变量 $</span>
+        NSPredicate*predicateTemplate=
+        [NSPredicatepredicateWithFormat:@<span class="string">"name == $NAME"</span>];
+        <span class="built_in">NSString</span> *name = @<span class="string">"zhangsan"</span>;
+
+           <span class="built_in">NSDictionary</span> *varDict = @{@<span class="string">"NAME"</span>:name};
+           predicate = [predicateTemplate predicateWithSubstitutionVariables:varDict];
+           <span class="keyword">for</span> (QYPerson *person in personArr) {
+            <span class="keyword">if</span> ([predicate evaluateWithObject:person]) {
+                    <span class="built_in">NSLog</span>(@<span class="string">"&gt;&gt;&gt;person:%@"</span>, person);
+            }
+            }
+
+    }
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/20/谓词的使用1/" data-id="q3hnl392ur5h5nvz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-iphone开发概述" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/10/iphone开发概述/" class="article-date">
+  <time datetime="2014-10-10T12:02:41.000Z" itemprop="datePublished">Oct 10 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/10/iphone开发概述/">iphone开发概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.发iOS应用程序特点</p>
+<pre><code><span class="attribute">只有一个应用程序正在运行;
+只有一个窗口(Window);
+受限访问：沙盒机制严格限制了应用程序的访问权限；较小网络端口；root权限；
+有限的响应时间;
+有限的屏幕大小;
+有限的系统资源：内存空间 &gt;</span>=<span class="string">20MB告警 &gt;=30MB关闭应用程序；存储空间&lt;=2GB；
+不支持GC;</span>
+</code></pre><p>2.沙盒机制（sandbox)</p>
+<pre><code>iOS中的沙盒机制（SandBox）是一种安全体系，它规定了应用程序只能在为该应用创建的文件夹内读取文件，不可以访问其他地方的内容。所有的非代码文件都保存在这个地方，比如图片、声音、属性列表和文本文件等。
+每个应用程序都在自己的沙盒内
+不能随意跨越自己的沙盒去访问别的应用程序沙盒的内容
+应用程序向外请求或接收数据都需要经过权限认证
+</code></pre><p>3.什么是应用程序的生命周期</p>
+<pre><code>应用程序生命周期指的是应用程序从启动到应用程序结束整个阶段的全部过程。
+每一个iOS应用程序都包含一个<span class="built_in">UIApplication</span>对象，iOS系统通过该对象监控程序生命周期的全过程
+每一个iOS应用程序都要为其<span class="built_in">UIApplication</span>对象设置一个代理对象，并由该代理对象处理    <span class="built_in">UIApplication</span>对象监测到的应用程序生命周期的事件
+</code></pre><p>4.应用程序的五种状态</p>
+<pre><code><span class="number">1</span>.<span class="keyword">Not</span> running（未运行 ）：程序没启动
+<span class="number">2</span>.Inactive （未激活）：程序在前台运行，不过没有接收到事件。在没有事件处理情况下程序通常停留在这个状态
+<span class="number">3</span>.Active（激活）： 程序在前台运行而且接收到了事件。这也是前台的一个正常的模式
+<span class="number">4</span>.Backgroud（后台）：程序在后台而且能执行代码，大多数程序进入这个状态后会在在这个状态上停留一会。时间到之后会进入挂起状态(Suspended)。有的程序经过特殊的请求后可以长期处于Backgroud状态
+<span class="number">5</span>.Suspended（挂起）：程序在后台不能执行代码。系统会自动把程序变成这个状态而且不会发出通知。当挂起时，程序还是停留在内存中的，当系统内存低时，系统就把挂起的程序清除掉，为前台程序提供更多的内存。
+
+
+UIApplicationMain函数有四个参数，你不需要改变这些参数值，不过我们也需要理解这些参数和程序是如何开始：argc 和argv参数。  第三个参数确定了主要应用程序类的名称，这个参数指定为<span class="keyword">nil</span>，这样UIKit就会使用默认UIApplication类创建对象。第四个参数是程序自定义的代理类名，这个类负责系统和代码之间的交互。它一般在Xcode新建项目时会自动生成。
+另外 UIApplicationMain函数加载了程序主界面的文件。虽然这个函数加载了界面文件，但是没有放到应用程序的windows上。
+
+重点理解，UIApplicationMain做的三件事：<span class="number">1</span>、根据第三个参数创建UIApplication对象 <span class="number">2</span>、根据第四个参数创建应用程序的<span class="keyword">delegate</span>，并设置<span class="keyword">delegate</span> <span class="number">3</span>、设置主事件循环(main <span class="keyword">event</span> <span class="keyword">loop</span>)包括application的run <span class="keyword">loop</span>,同时开始处理事件。
+</code></pre><p>5.响应中断</p>
+<pre><code>当一个基于警告式的中断发生时：比如有电话进来、或者锁屏，这时程序临时进入inactive状态，用户可以选择如何处理这个中断
+
+
+当有这些中断时，我们的app该怎么办呢？我们应该在applicationWillResignActive:方法中：
+
+<span class="number">1.</span>停止<span class="built_in">timer</span> 和其他周期性的任务
+<span class="number">2.</span>停止任何正在运行的请求
+<span class="number">3</span>，暂停视频的播放
+<span class="number">4.</span>如果是游戏那就暂停它
+<span class="number">5.</span>减少OpenGL ES的帧率
+<span class="number">6.</span>挂起任何分发的队列和不重要的操作队列（你可以继续处理网络请求或其他时间敏感的后台任务）。
+
+当程序回到active状态 ，applicationDidBecomeActive:   方法应该上面提到的任务重新开始，比如重新开始<span class="built_in">timer</span>, 继续分发队列，提高OpenGL ES的帧率。不过游戏要回到暂停状态，不能自动开始。
+</code></pre><p>6.当应用程序进入后台时，我们应该做些什么？</p>
+<pre><code><span class="number">1</span>.保存用户数据或状态信息，
+<span class="number">2</span>.所有没写到磁盘的文件或信息，在进入后台时，最后都写到磁盘去，因为程序可能在后台被杀死，
+<span class="number">3</span>.释放尽可能释放的内存
+
+application<span class="variable">DidEnterBackgound</span>: 方法有大概<span class="number">5</span>秒的时间让你完成这些任务。如果超过时间还有未完成的任务，你的程序就会被终止而且从内存中清除。如果还需要长时间的运行任务，可以调用  <span class="keyword">begin</span><span class="variable">BackgroundTaskWithExpirationHandler</span> 方法去请求后台运行时间和启动线程来运行长时间运行的任务。
+</code></pre><p>7.应用程序返回前台</p>
+<pre><code>当app处于挂起状态时，它是不能执行任何代码的。因此它不能处理在挂起期间发过来的通知，比如方向改变，时间改变，设置的改变还有其他影响程序展现的或状态的通知。在程序返回后台或前台是，程序都要正确的处理这些通知。
+</code></pre><p>8.程序的终止</p>
+<pre><code>程序只要符合以下情况之一，只要进入后台或挂起状态就会终止：
+<span class="filename">iOS4.0以前的系统
+app是基于iOS4.0之前系统开发的。
+设备不支持多任务
+在Info.plist文件中，程序包含了 UIApplicationExitsOnSuspend  键。
+app如果终止了  ,系统会调用app的代理的方法 applicationWillTerminate</span>:   这样可以让你可以做一些清理工作。你可以保存一些数据或app的状态。这个方法也有<span class="number">5</span>秒钟的限制。超时后方法会返回程序从内存中清除。
+注意：用户可以手工关闭应用程序。
+</code></pre><p>9.The Main Run Loop  主运行循环</p>
+<pre><code>Main Run <span class="keyword">Loop</span>负责处理用户相关的事件。UIApplication对象在程序启动时启动main run <span class="keyword">Loop</span>，它处理事件和更新视图的界面。看Main Run <span class="keyword">Loop</span>就知道，它是运行在程序的主线程上的。这样保证了接收到用户相关操作的事件是按顺序处理的。
+
+用户操作设备，相关的操作事件被系统生成并通过UIKit的指定端口分发。事件在内部排成队列，一个个的分发到Main run <span class="keyword">loop</span> 去做处理。UIApplication对象是第一个接收到时间的对象，它决定事件如何被处理。触摸事件分发到主窗口，窗口再分发到对应出发触摸事件的View。其他的事件通过其他途径分发给其他对象变量做处理。
+
+大部分的事件可以在你的应用里分发，类似于触摸事件，远程操控事件（线控耳机等）都是由app的 responder objects 对���处理的。Responder objects 在你的app里到处都是，比如：UIApplication 对象。view对象，view controller 对象，都是resopnder objects。大部分事件的目标都指定了resopnder <span class="built_in">object</span>，不过事件也可以传递给其他对象。比如，如果view对象不处理事件，可以传给父类view或者view controller。
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/10/iphone开发概述/" data-id="urdxv0ntqluq49kw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-字符串操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/07/字符串操作/" class="article-date">
+  <time datetime="2014-10-07T10:55:13.000Z" itemprop="datePublished">Oct 7 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/07/字符串操作/">字符串操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>//<br>    //  main.m<br>    //  String<br>    //<br>    //  Created by qingyun on 14-10-7.<br>    //  Copyright (c) 2014年 huanghaiyan. All rights reserved.<br>    //</p>
+<pre><code><span class="preprocessor">#import <span class="title">&lt;Foundation/Foundation.h&gt;</span></span>
+<span class="preprocessor">#include &lt;string.h&gt;</span>
+<span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])
+{
+
+<span class="comment">//字符串操作</span>
+<span class="built_in">NSString</span> *string = @<span class="string">"hello,world!"</span>;
+<span class="built_in">NSLog</span>(@<span class="string">"%@"</span>,string);
+
+<span class="built_in">NSString</span> *formatStr = [<span class="built_in">NSString</span> stringWithFormat:@<span class="string">"I am zhang%@, I am %d years old!"</span>,@<span class="string">"san"</span>,<span class="number">15</span>];
+<span class="built_in">NSLog</span>(@<span class="string">"%@"</span>,formatStr);
+
+
+<span class="built_in">NSString</span> *formatStr1 = [<span class="built_in">NSString</span> stringWithFormat:@<span class="string">"I am zhang%d, I am %d years old!"</span>,<span class="number">3</span>,<span class="number">15</span>];
+<span class="built_in">NSLog</span>(@<span class="string">"%@"</span>,formatStr1);
+
+<span class="comment">//通过C字符串来创建OC的字符串</span>
+
+<span class="built_in">NSString</span> *formCStr = [<span class="built_in">NSString</span> stringWithCString:<span class="string">"hello,world"</span> encoding:NSUTF8StringEncoding];
+<span class="built_in">NSLog</span>(@<span class="string">"formCStr:%@"</span>,formCStr);
+
+<span class="comment">//将OC的字符串对象转换成C的字符串</span>
+
+<span class="keyword">const</span> <span class="keyword">char</span>  *ptr = [formCStr UTF8String];
+printf(<span class="string">"===&gt;%s\n"</span>,ptr);
+
+<span class="comment">//获取字符串长度</span>
+
+NSUInteger length = [formatStr length];
+<span class="built_in">NSLog</span>(@<span class="string">"formatStr's length is :%lu"</span>,length);
+
+<span class="comment">//c语言字符串比较</span>
+
+<span class="keyword">char</span> *str = <span class="string">"hello,world!"</span>;
+<span class="keyword">char</span> arr[] = <span class="string">"Hello,world!"</span>;
+<span class="keyword">if</span>(strcasecmp(str, arr) == <span class="number">0</span>)
+   {
+       <span class="built_in">NSLog</span>(@<span class="string">"str is equal to arr"</span>);
+   }<span class="keyword">else</span>{
+       <span class="built_in">NSLog</span>(@<span class="string">"str is not equal arr"</span>);
+   }
+
+<span class="comment">//oc 字符串比较</span>
+
+<span class="built_in">NSString</span> *string1 = @<span class="string">"This is String1"</span>;
+<span class="built_in">NSString</span> *string2 = @<span class="string">"This is string2"</span>;
+<span class="built_in">BOOL</span> result01 = [string1 isEqualToString:string2];
+<span class="built_in">NSLog</span>(@<span class="string">"result01 :%d"</span>,result01);
+
+
+<span class="comment">//compare (返回三种值)</span>
+
+NSComparisonResult result02 = [string1 compare:string2];
+<span class="built_in">NSLog</span>(@<span class="string">"result02 :%ld"</span>,result02);<span class="comment">//结果为-1表示左值比右值小</span>
+
+<span class="comment">//不区分大小写比较1</span>
+
+<span class="keyword">if</span>([string1 caseInsensitiveCompare:string2] == NSOrderedSame){
+    <span class="built_in">NSLog</span>(@<span class="string">"string1 is equal to string2"</span>);
+}<span class="keyword">else</span> {
+    <span class="built_in">NSLog</span>(@<span class="string">"not equal"</span>);
+}
+
+<span class="comment">//不区分大小写比较2</span>
+NSComparisonResult result03 = [string1 compare:string2 options:NSCaseInsensitiveSearch |NSNumericSearch];
+<span class="keyword">if</span> (result03 == NSOrderedSame) {
+    <span class="built_in">NSLog</span>(@<span class="string">"string1 is equal to string2"</span>);
+}<span class="keyword">else</span> <span class="keyword">if</span>(result03 == NSOrderedSame){
+    <span class="built_in">NSLog</span>(@<span class="string">"string1 is little!"</span>);
+}<span class="keyword">else</span>{
+    <span class="built_in">NSLog</span>(@<span class="string">"string2 is little!"</span>);
+}
+
+<span class="comment">//改变字符串的大小写</span>
+
+<span class="built_in">NSString</span> *string3 = @<span class="string">"Astring"</span>;
+<span class="built_in">NSString</span> *string4 = @<span class="string">"String"</span>;
+
+<span class="built_in">NSLog</span>(@<span class="string">"after uppercase string3:%@"</span>,[string3 uppercaseString]);
+<span class="built_in">NSLog</span>(@<span class="string">"after lowercase string4:%@"</span>,[string4 lowercaseString]);
+
+
+<span class="comment">//字符串是否含有后缀</span>
+<span class="built_in">NSString</span> *filename = @<span class="string">"chaper.txt"</span>;
+<span class="keyword">if</span>([filename hasSuffix:@<span class="string">".txt"</span>])
+{
+    <span class="built_in">NSLog</span>(@<span class="string">"It's a txt file"</span>);
+}
+
+<span class="comment">//字符串是否含有前缀</span>
+
+<span class="built_in">NSString</span> *fileName2 = @<span class="string">"draft-hello.pages"</span>;
+<span class="keyword">if</span>([fileName2 hasPrefix:@<span class="string">"draft"</span>])
+{
+    <span class="built_in">NSLog</span>(@<span class="string">"It's a draft"</span>);
+}
+
+<span class="comment">//取出指定字符串中子串的范围</span>
+
+<span class="built_in">NSString</span> *string5 = @<span class="string">"hello world,hello kitty!"</span>;
+<span class="built_in">NSString</span> *string6 = @<span class="string">"kitty"</span>;
+
+<span class="built_in">NSRange</span> range = [string5 rangeOfString:string6];
+<span class="built_in">NSString</span> *rangeStr = [<span class="built_in">NSString</span> stringWithFormat:@<span class="string">"Location is %lu,length is %lu"</span>,range<span class="variable">.location</span>,range<span class="variable">.length</span>];
+<span class="built_in">NSLog</span>(@<span class="string">"range:%@"</span>,rangeStr);
+
+<span class="comment">//提取子串(子串从哪个位置开始到最后)</span>
+
+<span class="built_in">NSString</span> *string7 = @<span class="string">"This is a string"</span>;
+<span class="built_in">NSString</span> *string8 = [string7 substringFromIndex:<span class="number">3</span>];
+
+<span class="built_in">NSLog</span>(@<span class="string">"string8:%@"</span>,string8);
+
+
+<span class="comment">//提取子串(从开始到指定的位置)</span>
+<span class="built_in">NSString</span> *string9 = [string7 substringToIndex:<span class="number">3</span>];
+<span class="built_in">NSLog</span>(@<span class="string">"string9:%@"</span>,string9);
+
+
+<span class="comment">//提取子串(从哪个位置开始，提取多长个字符串)</span>
+<span class="built_in">NSString</span> *string10 = [string7 substringWithRange:NSMakeRange(<span class="number">3</span>,<span class="number">6</span>)];
+<span class="built_in">NSLog</span>(@<span class="string">"string10:%@"</span>,string10);
+
+<span class="built_in">NSString</span> *string11 = [string7 substringWithRange:NSMakeRange(<span class="number">3</span>,<span class="number">0</span>)];
+<span class="built_in">NSLog</span>(@<span class="string">"string10:%@"</span>,string11);
+
+<span class="comment">//文件扩展名</span>
+
+<span class="built_in">NSString</span> *fileName3 = @<span class="string">"~/hello.txt"</span>;
+<span class="built_in">NSLog</span>(@<span class="string">"Extention:%@"</span>,[fileName3 pathExtension]);
+
+<span class="comment">//绝对路径和相对路径的转换</span>
+
+<span class="built_in">NSString</span> *path = @<span class="string">"~/test.mou"</span>;
+<span class="built_in">NSString</span> *absPath = [path stringByExpandingTildeInPath];
+<span class="built_in">NSLog</span>(@<span class="string">"absPath:%@"</span>,absPath);
+
+
+<span class="built_in">NSLog</span>(@<span class="string">"path:%@"</span>,[absPath stringByAbbreviatingWithTildeInPath]);
+
+<span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/07/字符串操作/" data-id="3mgxif4vu738bdel" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xcode快捷键" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/06/xcode快捷键/" class="article-date">
+  <time datetime="2014-10-06T01:28:04.000Z" itemprop="datePublished">Oct 6 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/06/xcode快捷键/">xcode快捷键</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.移动和选择操作</p>
+<pre><code>Ctrl + a 移动光标到行首
+
+Ctrl + e 移动光标到行尾
+
+Ctrl + f 向前移动光标
+
+Ctrl + b 向后移动光标
+
+Ctrl + Option + f 向前移动一个单词 
+
+Ctrl + Option + b 向后移动一个单词 
+
+Ctrl + n 向下移动光标
+
+Ctrl + p 向上移动光标
+
+Ctrl + <span class="keyword">SHIFT</span> + f 向前选择
+
+Ctrl + <span class="keyword">SHIFT</span> + b 向后选择 
+
+Ctrl + <span class="keyword">SHIFT</span> + n 向下选择 
+
+Ctrl + <span class="keyword">SHIFT</span> + p 向上选择
+</code></pre><p>2.删除操作</p>
+<pre><code>Ctrl + h 删除光标前面的字符
+
+Ctrl + d 删除光标后面的字符
+
+Ctrl + k 删除当前光标到行尾的所有内容 
+</code></pre><p>3.撤销删除操作</p>
+<pre><code><span class="command"><span class="keyword">command</span> + <span class="title">z</span> 撤销删除操作</span>
+</code></pre><p>4.全选、复制、粘贴操作</p>
+<pre><code><span class="command"><span class="keyword">command</span> + <span class="title">a</span>  全选</span>
+
+<span class="command"><span class="keyword">command</span> + <span class="title">c</span>  复制    </span>
+
+<span class="command"><span class="keyword">command</span> +<span class="title">v</span>   粘贴</span>
+</code></pre><p>5.隐藏操作</p>
+<pre><code><span class="command"><span class="keyword">command</span> +<span class="title">option</span> +左箭头</span>
+</code></pre><p>6.撤销隐藏操作</p>
+<pre><code><span class="command"><span class="keyword">command</span> +<span class="title">option</span> +右箭头</span>
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/06/xcode快捷键/" data-id="wnyof5iudq43usrt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-MAC上搭建hexo极简指南" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/04/MAC上搭建hexo极简指南/" class="article-date">
+  <time datetime="2014-10-04T11:06:15.000Z" itemprop="datePublished">Oct 4 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/04/MAC上搭建hexo极简指南/">MAC上搭建hexo极简指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-运行_ruby_-e_命令">1.运行 ruby -e 命令</h5>
+<hr>
+<pre><code>ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span>
+</code></pre><hr>
+<h5 id="2-安装nvm(node-js的版本管理工具）">2.安装nvm(node.js的版本管理工具）</h5>
+<hr>
+<pre><code><span class="variable">$ </span>wget -qO- <span class="symbol">https:</span>/<span class="regexp">/raw.github.com/creationix</span><span class="regexp">/nvm/master</span><span class="regexp">/install.sh | sh</span>
+</code></pre><hr>
+<h5 id="3-添加如下内容到-zshrc配置文件">3.添加如下内容到.zshrc配置文件</h5>
+<hr>
+<pre><code>[ -s <span class="string">"/Users/<span class="escape">`u</span>sers<span class="escape">`/</span>.nvm/nvm.sh"</span> ] &amp;&amp; . <span class="string">"/Users/<span class="escape">`u</span>sers<span class="escape">`/</span>.nvm/nvm.sh"</span> # This loads nvm
+</code></pre><hr>
+<h5 id="4-安装node-js(通过nvm安装)">4.安装node.js(通过nvm安装)</h5>
+<hr>
+<pre><code><span class="variable">$ </span>nvm install <span class="number">0</span>.<span class="number">10</span>
+</code></pre><hr>
+<h5 id="5-安装hexo（通过npm安装）">5.安装hexo（通过npm安装）</h5>
+<hr>
+<pre><code><span class="variable">$ </span>npm install -g hexo
+</code></pre><hr>
+<h5 id="6-创建hexo文件夹，并安装hexo相关组件">6.创建hexo文件夹，并安装hexo相关组件</h5>
+<hr>
+<pre><code><span class="number">1</span>.<span class="variable">$ </span>hexo init hexo
+<span class="number">2</span>.<span class="variable">$ </span>cd hexo
+<span class="number">3</span>.<span class="variable">$ </span>npm install
+</code></pre><hr>
+<h5 id="7-本地查看">7.本地查看</h5>
+<hr>
+<p>  输入如下命令后，打开浏览器，并输入localhost:4000来查看</p>
+<pre><code><span class="number">1</span>.<span class="variable">$ </span>hexo g
+<span class="number">2</span>.<span class="variable">$ </span>hexo s
+</code></pre><hr>
+<h5 id="8-注册github账号">8.注册github账号</h5>
+<h5 id="9-创建github账号同名repository">9.创建github账号同名repository</h5>
+<hr>
+<p>   eg:github账号名位dorayox，则创建dorayox.github.io</p>
+<hr>
+<h5 id="10-部署到github上">10.部署到github上</h5>
+<pre><code>如下所示编辑_config<span class="preprocessor">.yml</span>
+<span class="label">deploy:</span>
+  type: github
+  repository: git@github<span class="preprocessor">.com</span>:dorayox/dorayox<span class="preprocessor">.github</span><span class="preprocessor">.io</span><span class="preprocessor">.git</span>
+  branch: master
+</code></pre><p>输入如下命令，完成到github得部署，之后打开浏览器并输入    dorayox.github.io来查看</p>
+<hr>
+<pre><code><span class="number">1</span>.<span class="variable">$ </span>hexo g
+<span class="number">2</span>.<span class="variable">$ </span>hexo d
+</code></pre><hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/04/MAC上搭建hexo极简指南/" data-id="r1pmwy431i8ej76e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" href="/page/3/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

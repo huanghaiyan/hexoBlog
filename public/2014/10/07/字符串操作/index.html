@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>字符串操作 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="article" property="og:type">
+<meta content="字符串操作" property="og:title">
+<meta content="http://yoursite.com/2014/10/07/字符串操作/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta content="//    //  main.m    //  String    //    //  Created by qingyun on 14-10-7.    //  Copyright (c) 2014年 huanghaiyan. All rights reserved.    //
+#import &lt;Foundation/Foundation.h&gt;
+#include &lt;strin" property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-字符串操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/07/字符串操作/" class="article-date">
+  <time datetime="2014-10-07T10:55:13.000Z" itemprop="datePublished">Oct 7 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      字符串操作
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>//<br>    //  main.m<br>    //  String<br>    //<br>    //  Created by qingyun on 14-10-7.<br>    //  Copyright (c) 2014年 huanghaiyan. All rights reserved.<br>    //</p>
+<pre><code><span class="preprocessor">#import <span class="title">&lt;Foundation/Foundation.h&gt;</span></span>
+<span class="preprocessor">#include &lt;string.h&gt;</span>
+<span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])
+{
+
+<span class="comment">//字符串操作</span>
+<span class="built_in">NSString</span> *string = @<span class="string">"hello,world!"</span>;
+<span class="built_in">NSLog</span>(@<span class="string">"%@"</span>,string);
+
+<span class="built_in">NSString</span> *formatStr = [<span class="built_in">NSString</span> stringWithFormat:@<span class="string">"I am zhang%@, I am %d years old!"</span>,@<span class="string">"san"</span>,<span class="number">15</span>];
+<span class="built_in">NSLog</span>(@<span class="string">"%@"</span>,formatStr);
+
+
+<span class="built_in">NSString</span> *formatStr1 = [<span class="built_in">NSString</span> stringWithFormat:@<span class="string">"I am zhang%d, I am %d years old!"</span>,<span class="number">3</span>,<span class="number">15</span>];
+<span class="built_in">NSLog</span>(@<span class="string">"%@"</span>,formatStr1);
+
+<span class="comment">//通过C字符串来创建OC的字符串</span>
+
+<span class="built_in">NSString</span> *formCStr = [<span class="built_in">NSString</span> stringWithCString:<span class="string">"hello,world"</span> encoding:NSUTF8StringEncoding];
+<span class="built_in">NSLog</span>(@<span class="string">"formCStr:%@"</span>,formCStr);
+
+<span class="comment">//将OC的字符串对象转换成C的字符串</span>
+
+<span class="keyword">const</span> <span class="keyword">char</span>  *ptr = [formCStr UTF8String];
+printf(<span class="string">"===&gt;%s\n"</span>,ptr);
+
+<span class="comment">//获取字符串长度</span>
+
+NSUInteger length = [formatStr length];
+<span class="built_in">NSLog</span>(@<span class="string">"formatStr's length is :%lu"</span>,length);
+
+<span class="comment">//c语言字符串比较</span>
+
+<span class="keyword">char</span> *str = <span class="string">"hello,world!"</span>;
+<span class="keyword">char</span> arr[] = <span class="string">"Hello,world!"</span>;
+<span class="keyword">if</span>(strcasecmp(str, arr) == <span class="number">0</span>)
+   {
+       <span class="built_in">NSLog</span>(@<span class="string">"str is equal to arr"</span>);
+   }<span class="keyword">else</span>{
+       <span class="built_in">NSLog</span>(@<span class="string">"str is not equal arr"</span>);
+   }
+
+<span class="comment">//oc 字符串比较</span>
+
+<span class="built_in">NSString</span> *string1 = @<span class="string">"This is String1"</span>;
+<span class="built_in">NSString</span> *string2 = @<span class="string">"This is string2"</span>;
+<span class="built_in">BOOL</span> result01 = [string1 isEqualToString:string2];
+<span class="built_in">NSLog</span>(@<span class="string">"result01 :%d"</span>,result01);
+
+
+<span class="comment">//compare (返回三种值)</span>
+
+NSComparisonResult result02 = [string1 compare:string2];
+<span class="built_in">NSLog</span>(@<span class="string">"result02 :%ld"</span>,result02);<span class="comment">//结果为-1表示左值比右值小</span>
+
+<span class="comment">//不区分大小写比较1</span>
+
+<span class="keyword">if</span>([string1 caseInsensitiveCompare:string2] == NSOrderedSame){
+    <span class="built_in">NSLog</span>(@<span class="string">"string1 is equal to string2"</span>);
+}<span class="keyword">else</span> {
+    <span class="built_in">NSLog</span>(@<span class="string">"not equal"</span>);
+}
+
+<span class="comment">//不区分大小写比较2</span>
+NSComparisonResult result03 = [string1 compare:string2 options:NSCaseInsensitiveSearch |NSNumericSearch];
+<span class="keyword">if</span> (result03 == NSOrderedSame) {
+    <span class="built_in">NSLog</span>(@<span class="string">"string1 is equal to string2"</span>);
+}<span class="keyword">else</span> <span class="keyword">if</span>(result03 == NSOrderedSame){
+    <span class="built_in">NSLog</span>(@<span class="string">"string1 is little!"</span>);
+}<span class="keyword">else</span>{
+    <span class="built_in">NSLog</span>(@<span class="string">"string2 is little!"</span>);
+}
+
+<span class="comment">//改变字符串的大小写</span>
+
+<span class="built_in">NSString</span> *string3 = @<span class="string">"Astring"</span>;
+<span class="built_in">NSString</span> *string4 = @<span class="string">"String"</span>;
+
+<span class="built_in">NSLog</span>(@<span class="string">"after uppercase string3:%@"</span>,[string3 uppercaseString]);
+<span class="built_in">NSLog</span>(@<span class="string">"after lowercase string4:%@"</span>,[string4 lowercaseString]);
+
+
+<span class="comment">//字符串是否含有后缀</span>
+<span class="built_in">NSString</span> *filename = @<span class="string">"chaper.txt"</span>;
+<span class="keyword">if</span>([filename hasSuffix:@<span class="string">".txt"</span>])
+{
+    <span class="built_in">NSLog</span>(@<span class="string">"It's a txt file"</span>);
+}
+
+<span class="comment">//字符串是否含有前缀</span>
+
+<span class="built_in">NSString</span> *fileName2 = @<span class="string">"draft-hello.pages"</span>;
+<span class="keyword">if</span>([fileName2 hasPrefix:@<span class="string">"draft"</span>])
+{
+    <span class="built_in">NSLog</span>(@<span class="string">"It's a draft"</span>);
+}
+
+<span class="comment">//取出指定字符串中子串的范围</span>
+
+<span class="built_in">NSString</span> *string5 = @<span class="string">"hello world,hello kitty!"</span>;
+<span class="built_in">NSString</span> *string6 = @<span class="string">"kitty"</span>;
+
+<span class="built_in">NSRange</span> range = [string5 rangeOfString:string6];
+<span class="built_in">NSString</span> *rangeStr = [<span class="built_in">NSString</span> stringWithFormat:@<span class="string">"Location is %lu,length is %lu"</span>,range<span class="variable">.location</span>,range<span class="variable">.length</span>];
+<span class="built_in">NSLog</span>(@<span class="string">"range:%@"</span>,rangeStr);
+
+<span class="comment">//提取子串(子串从哪个位置开始到最后)</span>
+
+<span class="built_in">NSString</span> *string7 = @<span class="string">"This is a string"</span>;
+<span class="built_in">NSString</span> *string8 = [string7 substringFromIndex:<span class="number">3</span>];
+
+<span class="built_in">NSLog</span>(@<span class="string">"string8:%@"</span>,string8);
+
+
+<span class="comment">//提取子串(从开始到指定的位置)</span>
+<span class="built_in">NSString</span> *string9 = [string7 substringToIndex:<span class="number">3</span>];
+<span class="built_in">NSLog</span>(@<span class="string">"string9:%@"</span>,string9);
+
+
+<span class="comment">//提取子串(从哪个位置开始，提取多长个字符串)</span>
+<span class="built_in">NSString</span> *string10 = [string7 substringWithRange:NSMakeRange(<span class="number">3</span>,<span class="number">6</span>)];
+<span class="built_in">NSLog</span>(@<span class="string">"string10:%@"</span>,string10);
+
+<span class="built_in">NSString</span> *string11 = [string7 substringWithRange:NSMakeRange(<span class="number">3</span>,<span class="number">0</span>)];
+<span class="built_in">NSLog</span>(@<span class="string">"string10:%@"</span>,string11);
+
+<span class="comment">//文件扩展名</span>
+
+<span class="built_in">NSString</span> *fileName3 = @<span class="string">"~/hello.txt"</span>;
+<span class="built_in">NSLog</span>(@<span class="string">"Extention:%@"</span>,[fileName3 pathExtension]);
+
+<span class="comment">//绝对路径和相对路径的转换</span>
+
+<span class="built_in">NSString</span> *path = @<span class="string">"~/test.mou"</span>;
+<span class="built_in">NSString</span> *absPath = [path stringByExpandingTildeInPath];
+<span class="built_in">NSLog</span>(@<span class="string">"absPath:%@"</span>,absPath);
+
+
+<span class="built_in">NSLog</span>(@<span class="string">"path:%@"</span>,[absPath stringByAbbreviatingWithTildeInPath]);
+
+<span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/07/字符串操作/" data-id="3mgxif4vu738bdel" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/10/iphone开发概述/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          iphone开发概述
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/06/xcode快捷键/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">xcode快捷键</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

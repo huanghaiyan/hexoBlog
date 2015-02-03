@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2014/11 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="website" property="og:type">
+<meta content="Hexo" property="og:title">
+<meta content="http://yoursite.com/archives/2014/11/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-afnetworking学习网址" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/29/afnetworking学习网址/" class="article-date">
+  <time datetime="2014-11-29T13:16:56.000Z" itemprop="datePublished">Nov 29 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://github.com/AFNetworking/AFNetworking" target="_blank">https://github.com/AFNetworking/AFNetworking</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/29/afnetworking学习网址/" data-id="bzddpdyukddz1oku" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xml-and-json" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/27/xml-and-json/" class="article-date">
+  <time datetime="2014-11-27T12:37:16.000Z" itemprop="datePublished">Nov 27 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/27/xml-and-json/">xml and json</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="XML">XML</h3>
+<h4 id="SMX解析">SMX解析</h4>
+<ol>
+<li><p>创建XML解析对象</p>
+<pre><code> <span class="built_in">NSURL</span> *fileURL = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:@<span class="string">"bookstore"</span> withExtension:@<span class="string">"xml"</span>];
+ NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:fileURL];
+</code></pre></li>
+<li><p>设置XML解析对象代理</p>
+</li>
+<li><p>开始解析</p>
+<pre><code> <span class="built_in">BOOL</span> flag = [xmlParser parse];
+ <span class="keyword">if</span>(!flag){
+     <span class="built_in">NSLog</span>(@<span class="string">"xmlParser parse error."</span>);
+ } 
+</code></pre></li>
+</ol>
+<h4 id="NSXMLPqrser对象代理方法">NSXMLPqrser对象代理方法</h4>
+<ul>
+<li><p>(void)parserDidStartDocument:(NSXMLParser *)parser //当开始解析XML文档的时候，调用这个方法。通常在这个方法⾥， 创建存储<br>模型对象的数组</p>
+</li>
+<li><p>(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict   //当开始解析，遇到元素的开始标签的时候，调用这个方法。通常在这个方法里， 创建模型对象或解析标签中的属性保存在模型对象中</p>
+</li>
+<li><p>(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string   //当解析到xml标签的文本内容的时候，调⽤这个方法, 通常在这里先暂存解析到的文本内容</p>
+</li>
+<li><p>(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName //当解析xml内容遇到结束标签的时候，调用这个方法。通常在这个方法里，需要将模型对象保存入数组中或把标签对应的文本内容解析出来，保存在模型对象中（KVC）</p>
+</li>
+<li><p>(void)parserDidEndDocument:(NSXMLParser *)parser //当整个xml文档全部解析结束的时候，该⽅法会被调⽤</p>
+</li>
+<li><p>(void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError  //当遇到解析错误时，该方法会被调⽤</p>
+</li>
+</ul>
+<h4 id="DOM解析(以GDataXMLNode为例)">DOM解析(以GDataXMLNode为例)</h4>
+<p>使用:</p>
+<p>添加头文件搜索路径: Build Settings-&gt;Header Search Paths-&gt;”/usr/include/libxml2”<br>用非ARC的方式编译GDataXMLNode.m文件 -fno-objc-arc<br>链接libxml2.dylib该动态库 Build Phases-&gt;Link Binary With Libraries-&gt;”libxml2.dylib”</p>
+<pre><code>/*
+<span class="bullet">* </span><span class="xml"><span class="tag">&lt;<span class="title">节点</span>&gt;</span></span> (GDataXMLNode)
+<span class="bullet">* </span>根据 DOM，XML ⽂文档中的每个成分都是⼀一个节点。
+<span class="bullet">* </span>DOM 是这样规定的：
+<span class="bullet">* </span>整个⽂文档是⼀一个⽂文档节点
+<span class="bullet">* </span>每个 XML 标签是⼀一个元素节点
+<span class="bullet">* </span>包含在 XML 元素中的⽂文本是⽂文本节点
+<span class="bullet">* </span>每⼀一个 XML 属性是⼀一个属性节点
+<span class="bullet">* </span>注释属于注释节点
+*/
+</code></pre><ol>
+<li><p>根据XML文件创建NSData对象</p>
+<pre><code> NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@<span class="string">"bookstore withExtension:@"</span>xml<span class="string">"];</span>
+ NSData *data = [NSData dataWithContentsOfURL:fileURL];
+</code></pre></li>
+<li><p>根据NSData对象创建GDataXMLDocument对象(即DOM模型对象),该对象在内存中是以树形结构存储的</p>
+<pre><code> <span class="type">GDataXMLDocument</span> *doc = [[<span class="type">GDataXMLDocument</span> alloc] initWithData:<span class="typedef"><span class="keyword">data</span> options:0 error:nil];</span>
+</code></pre></li>
+<li><p>通过DOM模型对象,取出XML文件的根元素</p>
+<pre><code><span class="attribute"> GDataXMLElement *rootElement </span>=<span class="string"> [doc rootElement];</span>
+</code></pre></li>
+<li><p>由于是树形结构,所以,可以根据子元素的名字使用根元素获取到所有子元素,并类推获得子元素的子元素</p>
+<pre><code> <span class="keyword">for</span> (GDataXMLElement <span class="variable">*element</span> in elements) {
+     <span class="regexp">//</span> 创建图书对象
+     YMBook <span class="variable">*book</span> = [[YMBook alloc] init];
+     <span class="regexp">//</span> 根据属性名字，解析book元素的属性值
+     book.category = [[element attributeForName:kCategory] stringValue];
+     <span class="regexp">//</span> 解析book的⼦子元素包含的⽂文本内容及其⼦子元素的属性
+     GDataXMLElement <span class="variable">*titleElement</span> = [element elementsForName:kTitle][<span class="number">0</span>];
+     book.title = [titleElement stringValue];
+     book.lang = [[titleElement attributeForName:kLanguage] stringValue];
+     GDataXMLElement <span class="variable">*authorElement</span> = [element elementsForName:kAuthor][<span class="number">0</span>];
+     book.author = [authorElement stringValue];
+     GDataXMLElement <span class="variable">*yearElement</span> = [element elementsForName:kYear][<span class="number">0</span>];
+     book.year = [yearElement stringValue];
+     GDataXMLElement <span class="variable">*priceElement</span> = [element elementsForName:kPrice][<span class="number">0</span>];
+     book.price = [priceElement stringValue];
+     [_bookStore addObject:book];
+ }
+</code></pre><h4 id="JSON">JSON</h4>
+</li>
+</ol>
+<p>从结构上看,所有的数据(data)最终都可以分解成三种类型:</p>
+<ul>
+<li><p>第一种类型是标量(scalar),也就是一个单独的字符串(string)或数字(numbers),比如”北京”这个单独的次</p>
+</li>
+<li><p>第二种类型是序列(sequence),也就是若干个相关的数据按照一定顺序并列在一起,又叫做数组(array)或列表(List),比如”北京,上海”</p>
+</li>
+<li><p>第三种类型是映射(mapping),也就是一个名/值对(Name/value),即数据有一个名称,还有一个与之相对应的值,这又称作散列(hash)或字典(dictionary),比如”首都:北京”</p>
+</li>
+</ul>
+<p>Json的规定</p>
+<ol>
+<li>并列的数据之间用逗号(“,”)分隔</li>
+<li>映射用冒号(“:”)表示  </li>
+<li>并列数据的集合(数组)用方括号(“[]”)表示</li>
+<li><p>映射的集合(对象)用大括号(“{}”)表示</p>
+<pre><code> rfc-<span class="number">4627</span>
+ www<span class="preprocessor">.json</span><span class="preprocessor">.org</span>/json-<span class="built_in">zh</span><span class="preprocessor">.htm</span>
+ www<span class="preprocessor">.sojson</span><span class="preprocessor">.com</span> 
+</code></pre></li>
+</ol>
+<h4 id="NSJSONSerialization">NSJSONSerialization</h4>
+<pre><code>+ (<span class="tag">id</span>)<span class="tag">JSONObjectWithData</span><span class="pseudo">:(NSData</span> *)<span class="tag">data</span> <span class="tag">options</span><span class="pseudo">:(NSJSONReadingOptions)opt</span> <span class="tag">error</span><span class="pseudo">:(NSError</span> **)<span class="tag">error</span>
++ (<span class="tag">NSData</span> *)<span class="tag">dataWithJSONObject</span><span class="pseudo">:(id)obj</span> <span class="tag">options</span><span class="pseudo">:(NSJSONWritingOptions)opt</span> <span class="tag">error</span><span class="pseudo">:(NSError</span> **)<span class="tag">error</span>
+</code></pre><h4 id="JSONKit">JSONKit</h4>
+<p>使用:-fno-objc-arc<br>序列化:NSArray  NSDictionary  NSString</p>
+<pre><code>– <span class="constant">JSONData</span>
+– <span class="constant">JSONDataWithOptions</span><span class="symbol">:includeQuotes</span><span class="symbol">:error</span><span class="symbol">:</span>
+- <span class="constant">JSONDataWithOptions</span><span class="symbol">:serializeUnsupportedClassesUsingDelegate</span><span class="symbol">:selector</span><span class="symbol">:error</span><span class="symbol">:</span>
+- <span class="constant">JSONDataWithOptions</span><span class="symbol">:serializeUnsupportedClassesUsingBlock</span><span class="symbol">:error</span><span class="symbol">:</span>
+– <span class="constant">JSONString</span>
+– <span class="constant">JSONStringWithOptions</span><span class="symbol">:includeQuotes</span><span class="symbol">:error</span><span class="symbol">:</span>
+-<span class="constant">JSONStringWithOptions</span><span class="symbol">:serializeUnsupportedClassesUsingDelegate</span><span class="symbol">:selector</span><span class="symbol">:error</span><span class="symbol">:</span>
+– <span class="constant">JSONStringWithOptions</span><span class="symbol">:serializeUnsupportedClassesUsingBlock</span><span class="symbol">:error</span><span class="symbol">:</span>
+</code></pre><p>反序列化:NSData  NSString</p>
+<pre><code>– objectFromJSONData
+– objectFromJSONDataWithParseOptions:
+– objectFromJSONDataWithParseOptions:<span class="built_in">error</span>:
+– mutableObjectFromJSONData
+– mutableObjectFromJSONDataWithParseOptions:
+– mutableObjectFromJSONDataWithParseOptions:<span class="built_in">error</span>:
+– objectFromJSONString
+– objectFromJSONStringWithParseOptions:
+– objectFromJSONStringWithParseOptions:<span class="built_in">error</span>:
+– mutableObjectFromJSONString
+– mutableObjectFromJSONStringWithParseOptions:
+– mutableObjectFromJSONStringWithParseOptions:<span class="built_in">error</span>:
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/27/xml-and-json/" data-id="ao89j6l0p70u3tif" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xml解析学习网址" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/27/xml解析学习网址/" class="article-date">
+  <time datetime="2014-11-27T04:42:44.000Z" itemprop="datePublished">Nov 27 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/27/xml解析学习网址/">XML解析学习网址</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.w3school.com.cn/xml/xml_elements.asp" target="_blank">http://www.w3school.com.cn/xml/xml_elements.asp</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/27/xml解析学习网址/" data-id="mpu3x2o6xx8qf759" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-通配符&amp;正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/24/通配符&正则表达式/" class="article-date">
+  <time datetime="2014-11-24T02:28:04.000Z" itemprop="datePublished">Nov 24 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/24/通配符&正则表达式/">通配符&amp;正则表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>通配符</p>
+<pre><code> 通配符是系统级别的 ⽽而正则表达式需要相关⼯工具和语⾔言的⽀支持: egrep, awk, vi,perl.
+
+ 当您键入ls.txt命令并按Enter后,寻找哪些文件同.txt模式相匹配的任务不是由ls命令,而是由shell自己完成.这需要对命令行是如何被shell解析的作进一步解释.当您键入:
+ <span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span>__
+ $ ls *.txt
+ readme.txt   recipes.txt
+ <span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span><span class="strong">_____</span>__    
+ 该命令首先被分割成一系列单词(本例中的ls和.txt).当shell在某个单词中发现了,他会将整个单词当作通配模式解析,并用所有相匹配的文件替换它.因此,该命令在执行前就变成为ls readme.txt recipe.txt,而这将得到期望的结果.
+</code></pre></li>
+<li><p>通配符语法</p>
+<pre><code> 通配符语法<span class="symbol">:</span> 星号 将与零个或多个字符匹配.意思是<span class="symbol">:<span class="string">"什么都可以"</span></span>.
+ 例如<span class="symbol">:/etc/g*</span>  与/etc中以g开头的所有文件匹配.
+
+ 通配符语法<span class="symbol">:</span>? 与任何单个字符匹配.
+ 例如<span class="symbol">:myfile?</span> 与文件名 myfile后跟单个字符的任何文件匹配.
+ /tmp/notes?txt 将与 /tmp/notes.txt 和 /tmp/notes_txt 都匹配.
+
+ 通配符语法<span class="symbol">:[]</span> [!]  该通配符与?相似,但允许指定得更确切.要使用该通配符,把您想要匹配的所有字符放在[]内.结果的表达式将与[]中任一字符相匹配.您也可以用 - 来指定范围,甚至还可以组合范围.
+</code></pre></li>
+</ol>
+<pre><code>    [<span class="keyword">...</span>]:同方括号中的任意一个字符相匹配.这些字符可以用字符范围(比如<span class="number">1</span>-<span class="number">9</span>)或者离散值同时使用两者表示.例如:[a-zBE5-<span class="number">7</span>]同所有a到z之间的字符和B,E,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>相匹配.
+    [!<span class="keyword">...</span>]:与所有不在方括号中的某个字符相匹配.例如:[!a-z]同某个非小写字母相匹配[<span class="number">5</span>];
+
+    例子:myfile[<span class="number">12</span>]将与myfile1和myfile2匹配.    只要当前目录中至少有一个这样的文件存在,该通配符就可以进行扩展.    
+    ls /etc/[<span class="number">0</span>-<span class="number">9</span>]*将列出 /etc中以数字开头的所有文件. 
+</code></pre><ol>
+<li><p>正则表达式</p>
+<ul>
+<li><p>选择</p>
+<pre><code>  <span class="string">|竖直分隔符代表选择.例如"</span>gray<span class="string">|grey"</span>可以匹配gray或grey
+</code></pre></li>
+<li><p>数量限定</p>
+<pre><code>  +加号代表前面的字符必须至少出现一次.(<span class="number">0</span>次,或<span class="number">1</span>次).例如:<span class="string">"goo+gle"</span>可以匹配google,gooogle,goooogle等.
+  ?问号代表前面的字符最多只可以出现一次.(<span class="number">0</span>次,或<span class="number">1</span>次).例如:<span class="string">"colou?r"</span>可以匹配<span class="keyword">color</span>或者colour
+  *星号代表前面的字符可以不出现,也可以出现一次或多次(<span class="number">0</span>次,<span class="number">1</span>次或多次),例如:<span class="string">"0*42"</span>可以匹配<span class="number">42</span>,<span class="number">042</span>,<span class="number">0042</span>,<span class="number">00042</span>等.
+</code></pre></li>
+<li><p>匹配</p>
+<pre><code>  圆括号可以用来定义操作符的范围和优先度.例如:<span class="string">"gr(a|e)y"</span>等价于<span class="string">"gray|grey"</span>,<span class="string">"(grand)?father"</span>匹配father和grandfather
+</code></pre><p>上述这些构造都可以自由组合,因此,”H(ae?|b)ndel”和”H(a|ae|b)ndel”是相同的.    </p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/24/通配符&正则表达式/" data-id="mlkxemogtti3g77y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-uiscrollview基本用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/21/uiscrollview基本用法/" class="article-date">
+  <time datetime="2014-11-21T09:11:07.000Z" itemprop="datePublished">Nov 21 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/21/uiscrollview基本用法/">UIScrollView基本用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.UIScrollView基本概念</p>
+<pre><code><span class="built_in">UIScrollView</span>支持显示实际内容比<span class="built_in">UIWindow</span>大的视图。
+它通过扫动手势，能够使用户滚动内容，并且通过捏合手势缩放部分内容。
+<span class="built_in">UIScrollView</span>的核心理念是：它是一个可以在内容视图之上调整自己原点位置的视图。可以根据自身框架的大小，剪切视图中的内容，通常框架是和应用程序窗口一样大。一个滚动的视图可以根据手指的移动，调整原点的位置，展示内容的视图，根据滚动视图的原点位置开始绘制视图的内容，这个原点位置就是滚动视图的偏移量。，除了显示水平和竖直的指示器，ScrollView本身不绘制作何内容。
+滚动视图必须知道内容视图的大小，以便于知道什么时候停止；一般而言，当滚动出内容的边界时，它就返回了。
+</code></pre><p>2.UIScrollView常用属性</p>
+<pre><code>tracking
+当 touch 后还没有拖动的时候值是<span class="literal">YES</span>，否则<span class="literal">NO</span>
+zoomBouncing
+当内容放大到最大或者最小的时候值是 <span class="literal">YES</span>，否则 <span class="literal">NO</span>
+zooming
+当正在缩放的时候值是 <span class="literal">YES</span>，否则 <span class="literal">NO</span>
+decelerating
+当滚动后，手指放开但是还在继续滚动中。这个时候是 <span class="literal">YES</span>，其它时候是 <span class="literal">NO</span>
+decelerationRate
+设置手指放开后的减速率
+maximumZoomScale
+一个浮点数，表示能放最大的倍数
+minimumZoomScale 
+一个浮点数，表示能缩最小的倍数
+
+pagingEnabled
+当值是 <span class="literal">YES</span> 会自动滚动到 subview 的边界。默认是<span class="literal">NO</span>
+scrollEnabled
+决定是否可以滚动
+delaysContentTouches
+是个布尔值，当值是 <span class="literal">YES</span> 的时候，用户触碰开始，scroll view要延迟一会，看看是否用户有意图滚动。假如滚动了，那么捕捉 touch-down 事件，否则就不捕捉。假如值是<span class="literal">NO</span>，当用户触碰， scroll view 会立即触发 touchesShouldBegin:withEvent:inContentView:，默认是 <span class="literal">YES</span>
+canCancelContentTouches
+当值是 <span class="literal">YES</span> 的时候，用户触碰后，然后在一定时间内没有移动，scrollView 发送 tracking events，然后用户移动手指足够长度触发滚动事件，这个时候，scrollView 发送了 touchesCancelled:withEvent: 到 subview，然后 scroView 开始滚动。假如值是 <span class="literal">NO</span>，scrollView 发送 tracking events 后，就算用户移动手指，scrollView 也不会滚动。
+contentSize
+里面内容的大小，也就是可以滚动的大小，默认是<span class="number">0</span>，没有滚动效果。
+
+showsHorizontalScrollIndicator
+滚动时是否显示水平滚动条
+showsVerticalScrollIndicator
+滚动时是否显示垂直滚动条
+bounces
+默认是 yes，就是滚动超过边界会反弹有反弹回来的效果。假如是 <span class="literal">NO</span>，那么滚动到达边界会立刻停止。
+bouncesZoom
+和 bounces 类似,区别在于：这个效果反映在缩放上面，假如缩放超过最大缩放，那么会反弹效果；假如是 <span class="literal">NO</span>，则到达最大或者最小的时候立即停止。
+directionalLockEnabled
+默认是 <span class="literal">NO</span>，可以在垂直和水平方向同时运动。当值是 <span class="literal">YES</span> 时，假如一开始是垂直或者是水平运动，那么接下来会锁定另外一个方向的滚动。 假如一开始是对角方向滚动，则不会禁止某个方向
+indicatorStyle
+滚动条的样式，基本只是设置颜色。总共<span class="number">3</span>个颜色：默认、黑、白
+scrollIndicatorInsets
+设置滚动条的位置
+</code></pre><p>3.UIScrollViewDelegate方法</p>
+<pre><code>-<span class="ruby"> (void)<span class="symbol">scrollViewDidScroll:</span>(<span class="constant">UIScrollView</span> *)scrollView;                                               <span class="regexp">//</span> any offset changes
+</span>-<span class="ruby"> (void)<span class="symbol">scrollViewDidZoom:</span>(<span class="constant">UIScrollView</span> *)scrollView <span class="constant">NS_AVAILABLE_IOS</span>(<span class="number">3_2</span>); <span class="regexp">//</span> any zoom scale changes
+</span><span class="comment">
+// called on start of dragging (may require some time and or distance to move)</span>
+-<span class="ruby"> (void)<span class="symbol">scrollViewWillBeginDragging:</span>(<span class="constant">UIScrollView</span> *)scrollView;
+</span><span class="comment">// called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to adjust where the scroll view comes to rest</span>
+-<span class="ruby"> (void)<span class="symbol">scrollViewWillEndDragging:</span>(<span class="constant">UIScrollView</span> *)scrollView <span class="symbol">withVelocity:</span>(<span class="constant">CGPoint</span>)velocity <span class="symbol">targetContentOffset:</span>(inout <span class="constant">CGPoint</span> *)targetContentOffset <span class="constant">NS_AVAILABLE_IOS</span>(<span class="number">5_0</span>);
+</span><span class="comment">// called on finger up if the user dragged. decelerate is true if it will continue moving afterwards</span>
+-<span class="ruby"> (void)<span class="symbol">scrollViewDidEndDragging:</span>(<span class="constant">UIScrollView</span> *)scrollView <span class="symbol">willDecelerate:</span>(<span class="constant">BOOL</span>)decelerate;
+</span>
+-<span class="ruby"> (void)<span class="symbol">scrollViewWillBeginDecelerating:</span>(<span class="constant">UIScrollView</span> *)scrollView;   <span class="regexp">//</span> called on finger up as we are moving
+</span>-<span class="ruby"> (void)<span class="symbol">scrollViewDidEndDecelerating:</span>(<span class="constant">UIScrollView</span> *)scrollView;      <span class="regexp">//</span> called <span class="keyword">when</span> scroll view grinds to a halt
+</span>
+-<span class="ruby"> (void)<span class="symbol">scrollViewDidEndScrollingAnimation:</span>(<span class="constant">UIScrollView</span> *)scrollView; <span class="regexp">//</span> called <span class="keyword">when</span> setContentOffset/<span class="symbol">scrollRectVisible:</span><span class="symbol">animated:</span> finishes. <span class="keyword">not</span> called <span class="keyword">if</span> <span class="keyword">not</span> animating
+</span>
+-<span class="ruby"> (<span class="constant">UIView</span> *)<span class="symbol">viewForZoomingInScrollView:</span>(<span class="constant">UIScrollView</span> *)scrollView;     <span class="regexp">//</span> <span class="keyword">return</span> a view that will be scaled. <span class="keyword">if</span> delegate returns <span class="keyword">nil</span>, nothing happens
+</span>-<span class="ruby"> (void)<span class="symbol">scrollViewWillBeginZooming:</span>(<span class="constant">UIScrollView</span> *)scrollView <span class="symbol">withView:</span>(<span class="constant">UIView</span> *)view <span class="constant">NS_AVAILABLE_IOS</span>(<span class="number">3_2</span>); <span class="regexp">//</span> called before the scroll view begins zooming its content
+</span>-<span class="ruby"> (void)<span class="symbol">scrollViewDidEndZooming:</span>(<span class="constant">UIScrollView</span> *)scrollView <span class="symbol">withView:</span>(<span class="constant">UIView</span> *)view <span class="symbol">atScale:</span>(<span class="constant">CGFloat</span>)scale; <span class="regexp">//</span> scale between minimum <span class="keyword">and</span> maximum. called after any <span class="string">'bounce'</span> animations
+</span>
+-<span class="ruby"> (<span class="constant">BOOL</span>)<span class="symbol">scrollViewShouldScrollToTop:</span>(<span class="constant">UIScrollView</span> *)scrollView;   <span class="regexp">//</span> <span class="keyword">return</span> a yes <span class="keyword">if</span> you want to scroll to the top. <span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">defined</span>, assumes <span class="constant">YES</span>
+</span>-<span class="ruby"> (void)<span class="symbol">scrollViewDidScrollToTop:</span>(<span class="constant">UIScrollView</span> *)scrollView;      <span class="regexp">//</span> called <span class="keyword">when</span> scrolling animation finished. may be called immediately <span class="keyword">if</span> already at top</span>
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/21/uiscrollview基本用法/" data-id="u5e1874mczsrok4g" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-代码块" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/19/代码块/" class="article-date">
+  <time datetime="2014-11-19T11:15:33.000Z" itemprop="datePublished">Nov 19 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: 代码块<br>date: 2014-10-21 14:33:59</p>
+<h2 id="tags:代码块,全局变量,静态变量,局部变量">tags:代码块,全局变量,静态变量,局部变量</h2>
+<ol>
+<li><p>代码块的语法格式：</p>
+<pre><code> 返回值类型(^代码块名)（参数列表） = ^返回值类型（参数列表）{表达式;};
+ eg: <span class="keyword">void</span>(^myBlock)() = ^{<span class="built_in">printf</span>(“hello,block\n”);};
+
+ 说明：<span class="number">1.</span>返回值类型和参数列表都可以有条件省略
+  <span class="number">2.</span>省略返回值类型时，若表达式中有<span class="keyword">return</span> 语句就使用该返回值的类型，若没有，则为<span class="keyword">void</span>
+  <span class="number">3.</span>省略返回值类型时，若表达式中有多个<span class="keyword">return</span>语句，则所有<span class="keyword">return</span>语句返回值类型必须相同
+  <span class="number">4.</span>如果不适合参数，则参数列表也可以省略
+</code></pre></li>
+</ol>
+<ol>
+<li>直接使用</li>
+</ol>
+<pre><code>    <span class="keyword">void</span> (^myBlock)() = ^{<span class="built_in">printf</span>(<span class="string">"Hello, Block\n"</span>);};
+
+    myBlock();
+</code></pre><ol>
+<li>代码块内联</li>
+</ol>
+<pre><code>    <span class="built_in">NSArray</span> *array = @[@<span class="string">"One"</span>, @<span class="string">"Two"</span>, @<span class="string">"Three"</span>, @<span class="string">"Four"</span>];<span class="built_in">NSLog</span>(@<span class="string">"Sorted array: %@"</span>, sortedArray);
+
+    <span class="built_in">NSLog</span>(@<span class="string">"Unsorted array: %@"</span>, array);
+
+    <span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingComparator:^NSComparisonResult(<span class="keyword">id</span> obj1, <span class="keyword">id</span> obj2) {<span class="keyword">return</span> [obj1 compare:obj2];
+    }]; 
+</code></pre><ol>
+<li><p>代码块的变量</p>
+<pre><code>  1.全局变量和静态变量在代码块内部可以正常使用(可以修改其值) 
+  2.局部变量在代码块内部无法修改其值,原因是代码块的局部变量在编译阶段被看做为常 量
+  3.如果需要在代码块中修改局部变量,需要在局部变量前面加__block修饰符 
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/19/代码块/" data-id="cyf31r31wh9kpd9d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/19/事件/" class="article-date">
+  <time datetime="2014-11-19T02:29:24.000Z" itemprop="datePublished">Nov 19 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/19/事件/">事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.事件</p>
+<pre><code> <span class="operator">a</span>. 触摸事件(单点触摸,多点触摸及各种手势)
+ b. 晃动事件(重力,加速度等传感器)
+ c. 远程控制事件(线控耳机,airplay等)
+</code></pre><p>2.事件分发</p>
+<pre><code> 触摸—&gt;硬件中断—&gt;UIKit封装成UIEvent对象 (针对触摸事件)—&gt;当前运行的应用程序的事件队列—&gt;UIApplication对象—&gt;key window—&gt;Hit -TestingView或<span class="keyword">First</span> Responder
+</code></pre><p>3.事件响应</p>
+<pre><code> hitTest:withEvent:方法将会忽略隐藏(hidden = <span class="literal">YES</span>)的视图,禁止用户操作(userInteractionEnabled = <span class="literal">NO</span>)的视图,以及alpha级别小于<span class="number">0.01</span>(alpha&lt;<span class="number">0.01</span>)的视图
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/19/事件/" data-id="sbpcbz1aux0kae6f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/18/hello-world/" class="article-date">
+  <time datetime="2014-11-18T11:48:17.000Z" itemprop="datePublished">Nov 18 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/18/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="http://hexo.io" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs" target="_blank">documentation</a> to learn how to use.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/18/hello-world/" data-id="kcnv032jb9rmjqe0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

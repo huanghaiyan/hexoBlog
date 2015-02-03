@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CocoaPods的使用及安装 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="article" property="og:type">
+<meta content="CocoaPods的使用及安装" property="og:title">
+<meta content="http://yoursite.com/2015/01/10/cocoapods的使用及安装/" property="og:url">
+<meta property="og:image">
+<meta content="Hexo" property="og:site_name">
+<meta content="CocoaPods的安装及使用
+===
+CocoaPods介绍
+
+在iOS开发过程中，我们不可避免地使用第三方类库，但是类库的循环引用、更新等用手动操作的话会很费时和费力，所以，我们需要一款类库管理工具来管理我们使用的第三方类库。CocoaPods是iOS开发中最常用的类库管理工具。而且，绝大多数开源类库都支持CocoaPods。
+CocoaPods的安装
+
+1.CocoaPods的依赖环境
+（1" property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-cocoapods的使用及安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/10/cocoapods的使用及安装/" class="article-date">
+  <time datetime="2015-01-10T10:49:06.000Z" itemprop="datePublished">Jan 10 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CocoaPods的使用及安装
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CocoaPods的安装及使用">CocoaPods的安装及使用</h1>
+<p>===</p>
+<h2 id="CocoaPods介绍">CocoaPods介绍</h2>
+<hr>
+<pre><code>在iOS开发过程中，我们不可避免地使用第三方类库，但是类库的循环引用、更新等用手动操作的话会很费时和费力，所以，我们需要一款类库管理工具来管理我们使用的第三方类库。CocoaPods是iOS开发中最常用的类库管理工具。而且，绝大多数开源类库都支持CocoaPods。
+</code></pre><h2 id="CocoaPods的安装">CocoaPods的安装</h2>
+<hr>
+<p>1.CocoaPods的依赖环境</p>
+<p>（1.1）系统支持包安装：</p>
+<pre><code>&lt;<span class="number">1</span>&gt;安装Xcode
+&lt;<span class="number">2</span>&gt;安装Homebrew（包管理器）：$ ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span>
+</code></pre><p>（1.2）Ruby配置</p>
+<pre><code>在安装<span class="class">Ruby</span>之前，需要安装<span class="class">RVM</span>（<span class="class">Ruby</span>版本管理工具）：<span class="char">$ </span>curl -<span class="class">L</span> <span class="method">https:</span>//get.rvm.io | bash -s stable
+载入<span class="class">RVM</span>：<span class="char">$ </span>source ~/.rvm/scripts/rvm
+[检查<span class="class">RVM</span>安装是否正确：<span class="char">$ </span>rvm -v]
+使用<span class="class">RVM</span>安装<span class="class">Ruby</span>：<span class="char">$ </span>rvm install <span class="number">2.0</span><span class="number">.0</span>
+设置<span class="class">Ruby</span>版本：<span class="char">$ </span>rvm <span class="number">2.0</span><span class="number">.0</span> --default
+（如果安装的<span class="class">Ruby</span>为其他版本，也可以设置为默认版本。查看<span class="class">Ruby</span>版本号：<span class="char">$ </span>ruby -v）
+（注意：由于国内的网络环境，导致 rubygems.org 存放在 <span class="class">Amazon</span> <span class="class">S3</span> 上面的资源文件间歇性连接失败，因此使用gem或bundle时常常会遇到长久无响应的情况。解决方案是使用淘宝的 <span class="class">RubyGems</span> 镜像，它是一个完整 rubygems.org 镜像，你可以用此代替官方版本，同步频率目前为<span class="number">15</span>分钟一次以保证尽量与官方服务同步。，使用淘宝<span class="class">Rubygems</span>镜像访问配置如下： 
+<span class="char">$ </span>gem source --remove https//rubygems.org/
+<span class="char">$ </span>gem source -a <span class="method">http:</span>//ruby.taobao.org/
+验证命令：<span class="char">$ </span>gem source -l）
+</code></pre><p>（1.3）安装CocoaPods</p>
+<pre><code>运行命令：$ <span class="built_in">sudo</span> gem install cocoapods
+CocoaPods安装完成
+</code></pre><h2 id="CocoaPods的使用">CocoaPods的使用</h2>
+<hr>
+<p><code>使用CocoaPods管理第三方库首先要创建一个#Podfile#的文件，注意文件名必须是而且只有一个#Podfile#，有两种做法可以把第三方库文件导入工程</code></p>
+<p>1.1 直接在工程文件夹里加入Podfile文件</p>
+<pre><code>利用终端<span class="built_in">cd</span>到工程文件夹下创建Podfile
+</code></pre><p>1.2 不在工程文件夹下创建Podfile</p>
+<pre><code>注意：这种做法需在Podfile文件头写入：
+<span class="array">#xcodeproj </span><span class="string">"&lt;文件路径&gt;/&lt;工程名&gt;.xcodeproj"</span>#
+</code></pre><p>2 Podfile文件的编写格式</p>
+<pre><code>Podfile 是一个文件，用于定义项目所需要使用的第三方库。该文件支持高度定制，你可以根据个人喜好对其做出定制。
+source <span class="string">'https://github.com/CocoaPods/Specs.git'</span>
+
+<span class="built_in">platform</span> :ios, <span class="string">'6.0'</span>（指定支持的iOS系统最高版本版本）
+inhibit_all_warnings!
+
+xcodeproj <span class="string">'MyProject'</span>
+
+pod <span class="string">'ObjectiveSugar'</span>, <span class="string">'~&gt; 0.5'</span>
+
+target :test <span class="built_in">do</span>
+      pod <span class="string">'OCMock'</span>, <span class="string">'~&gt; 2.0.1'</span>
+<span class="function"><span class="keyword">end</span></span>
+
+post_install <span class="built_in">do</span> |installer|
+      installer.project.targets.<span class="keyword">each</span> <span class="built_in">do</span> |target|
+        puts <span class="string">"#{target.name}"</span>
+      <span class="function"><span class="keyword">end</span></span>
+<span class="function"><span class="keyword">end</span></span>
+（导入第三方库的版本规定的一些方式
+pod <span class="string">'AFNetworking'</span>     <span class="comment"> //不显式指定依赖库版本，表示每次都获取最新版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'2.0'</span>    <span class="comment"> //只使用2.0版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'&gt; 2.0'</span>    <span class="comment"> //使用高于2.0的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'&gt;= 2.0'</span>    <span class="comment"> //使用大于或等于2.0的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'&lt; 2.0'</span>    <span class="comment"> //使用小于2.0的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'&lt;= 2.0'</span>    <span class="comment"> //使用小于或等于2.0的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt; 0.1.2'</span>    <span class="comment"> //使用大于等于0.1.2但小于0.2的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt;0.1'</span>    <span class="comment"> //使用大于等于0.1但小于1.0的版本</span>
+pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt;0'</span>    <span class="comment"> //高于0的版本，写这个限制和什么都不写是一个效果，都表示使用最新版本）</span>
+</code></pre><p>3.CocoaPods的一些常用命令</p>
+<pre><code>3.1、pod install
+根据Podfile文件指定的内容，安装依赖库，如果有Podfile.<span class="operator"><span class="keyword">lock</span>文件而且对应的Podfile文件未被修改，则会根据Podfile.<span class="keyword">lock</span>文件指定的版本安装。
+每次更新了Podfile文件时，都需要重新执行该命令，以便重新安装Pods依赖库。
+<span class="number">3.2</span>、pod <span class="keyword">update</span>
+若果Podfile中指定的依赖库版本不是写死的，当对应的依赖库有了更新，无论有没有Podfile.<span class="keyword">lock</span>文件都会去获取Podfile文件描述的允许获取到的最新依赖库版本。
+<span class="number">3.3</span>、pod list 
+列出所有可用的第三方库
+<span class="number">3.4</span>、pod search &lt;类库名称&gt;
+查看类库是否支持CocoaPods</span>
+</code></pre><p>4.CocoaPods更新</p>
+<pre><code>cocoapods更新：<span class="built_in">sudo</span> gem update cocoapods
+更新预览版：<span class="built_in">sudo</span> gem update cocoapods pre
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/10/cocoapods的使用及安装/" data-id="nfoduz3u6ezx54sa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/10/fmdb使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          FMDB使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/29/afnetworking学习网址/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">AFNetworking学习网址</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">November 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">October 2014</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/22/mac环境下svn的使用/">MAC环境下SVN的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/17/1.uiviewcontroller_xib的加载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/fmdb使用/">FMDB使用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/10/cocoapods的使用及安装/">CocoaPods的使用及安装</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/afnetworking学习网址/">AFNetworking学习网址</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Haiyan Huang<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>
